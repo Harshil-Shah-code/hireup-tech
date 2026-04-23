@@ -11,7 +11,7 @@ export function SiteFooter() {
 
           {/* Content Wrap */}
           <div className="flex-1 p-8 sm:p-12 lg:p-16 lg:pb-20 relative z-10">
-            <h2 className="text-xl sm:text-4xl lg:text-3xl font-extrabold text-white leading-[1.2] lg:leading-[1.1] mb-2lg:mb-6">
+            <h2 className="text-xl sm:text-4xl lg:text-3xl font-bold text-white leading-[1.2] lg:leading-[1.1] mb-2lg:mb-6">
               Got a Job Hunt Stress or <br className="hidden sm:block" />
               Hiring Problem? We Love Those
             </h2>

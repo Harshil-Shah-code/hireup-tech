@@ -1,6 +1,6 @@
 import {
   Target, CalendarClock, Compass, ShieldCheck, MessageSquare,
-  Building2, UserCheck, Zap, Layers, FileCheck,
+  Building2, UserCheck, Zap, Layers, FileCheck, Rocket,
 } from "lucide-react";
 
 const seekers = [
@@ -12,11 +12,11 @@ const seekers = [
 ];
 
 const employers = [
-  { icon: Building2, title: "Industry-Focused Hiring", text: "We understand your sector and find talent that actually fits." },
-  { icon: UserCheck, title: "Pre-Screened Candidates", text: "Save time by meeting our pre-screened, qualified, and verified professionals." },
-  { icon: Zap, title: "Faster Hiring Cycles", text: "Our process reduces hiring delays significantly — we are strict with deadlines." },
-  { icon: Layers, title: "Flexible Workforce Solutions", text: "From permanent hires to staffing and talent acquisition support — we do it all." },
-  { icon: FileCheck, title: "Compliance & Payroll Support", text: "Background checks, payroll, and tax support handled seamlessly." },
+  { icon: Target, title: "Quality Over Random Applications", text: "We don't spam job portals. Every application is carefully matched to the candidate's profile." },
+  { icon: ShieldCheck, title: "Refund Assurance", text: "If expectations aren't met under our service terms, our SLA includes refund protection." },
+  { icon: Rocket, title: "Full Time Roles Only", text: "We focus on stable full-time roles with real companies, not short-term contract placements." },
+  { icon: UserCheck, title: "Interview-Ready Candidates", text: "We prepare professionals with mock interviews and practical training." },
+  { icon: Zap, title: "Speed Without Chaos", text: "Our recruiters apply strategically and secure interviews faster without compromising quality." },
 ];
 
 export function WhyChoose() {
@@ -27,14 +27,14 @@ export function WhyChoose() {
           <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
             Why Choose Us
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
             Why Job Seekers & Employers Choose HireUp
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10">
           <Column title="For Job Seekers" items={seekers} accent="orange" />
-          <Column title="For Employers" items={employers} accent="navy" />
+          <Column title="What Makes HireUp Different" items={employers} accent="navy" />
         </div>
       </div>
     </section>

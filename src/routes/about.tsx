@@ -38,7 +38,7 @@ function AboutPage() {
         <AboutStory />
         <AboutCommitment />
         <AboutJourney />
-        <AboutTeam />
+        {/* <AboutTeam /> */}
         <AboutCTA />
         <AboutFAQ />
       </main>

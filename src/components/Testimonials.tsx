@@ -41,7 +41,7 @@ export function Testimonials() {
           <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
             What Peeps Say
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
             See What They Have to Say
           </h2>
         </div>

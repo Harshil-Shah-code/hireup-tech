@@ -19,7 +19,7 @@ export function AboutStats() {
               key={s.label}
               className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10"
             >
-              <div className="text-4xl sm:text-5xl font-extrabold text-white">{s.value}</div>
+              <div className="text-4xl sm:text-5xl font-bold text-white">{s.value}</div>
               <div className="mt-2 text-sm font-medium text-white/70 uppercase tracking-wider">
                 {s.label}
               </div>

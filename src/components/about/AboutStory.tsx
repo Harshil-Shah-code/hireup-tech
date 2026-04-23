@@ -64,7 +64,7 @@ export function AboutStory() {
               About HireUp Tech Careers
             </span>
           </div>
-          <h2 className="text-3xl sm:text-3xl lg:text-4xl font-extrabold leading-[1.2] tracking-tight max-w-5xl">
+          <h2 className="text-3xl sm:text-3xl lg:text-4xl font-bold leading-[1.2] tracking-tight max-w-5xl">
             <ScrollHighlightText text="Founded with the belief that job seekers and jobs shouldn't struggle to find each other, HireUp has grown into a trusted partner for thousands of professionals and hundreds of companies since 2021. Today, we help careers grow and businesses hire smarter through our expertise." />
           </h2>
         </div>
@@ -86,7 +86,7 @@ export function AboutStory() {
                 About HireUp Tech Careers
               </span>
             </div>
-            <h3 className="text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
+            <h3 className="text-4xl lg:text-5xl font-bold text-navy leading-tight">
               We've helped over <br />
               <span className="text-navy">5400+ individuals &</span> <br />
               <span className="text-navy">360+ employers</span>

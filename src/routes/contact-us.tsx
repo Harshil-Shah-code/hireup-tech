@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { AboutFAQ } from "@/components/about/AboutFAQ";
+import { useCalendly } from "@/components/CalendlyProvider";
 
 export const Route = createFileRoute("/contact-us")({
   head: () => ({
@@ -24,6 +25,7 @@ export const Route = createFileRoute("/contact-us")({
 });
 
 function ContactUsPage() {
+  const { openCalendly } = useCalendly();
   const [formState, setFormState] = useState({
     firstName: "",
     lastName: "",
@@ -58,7 +60,7 @@ function ContactUsPage() {
                   Contact Us
                 </div>
 
-                <h1 className="mt-10 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-7xl leading-[1.05]">
+                <h1 className="mt-10 text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl leading-[1.05]">
                   Got Questions?<br />
                   <span className="text-white/90">Let's Talk</span>
                 </h1>
@@ -68,7 +70,10 @@ function ContactUsPage() {
                 </p>
 
                 <div className="mt-12 flex flex-wrap gap-5">
-                  <button className="group inline-flex items-center gap-3 rounded-full bg-white text-navy px-9 py-5 text-sm font-bold transition-all hover:bg-orange hover:text-white hover:scale-105 active:scale-95 shadow-xl shadow-white/5">
+                  <button 
+                    onClick={() => openCalendly()}
+                    className="group inline-flex items-center gap-3 rounded-full bg-white text-navy px-9 py-5 text-sm font-bold transition-all hover:bg-orange hover:text-white hover:scale-105 active:scale-95 shadow-xl shadow-white/5"
+                  >
                     Connect Now
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </button>
@@ -98,7 +103,7 @@ function ContactUsPage() {
                         <input
                           type="text"
                           required
-                          className="w-full rounded-2xl border-none bg-accent/30 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/20 focus:bg-accent/50 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
+                          className="w-full rounded-2xl border-none bg-accent/90 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/40 focus:bg-accent/90 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
                           placeholder="Your last name"
                           value={formState.lastName}
                           onChange={(e) => setFormState({ ...formState, lastName: e.target.value })}
@@ -109,7 +114,7 @@ function ContactUsPage() {
                         <input
                           type="text"
                           required
-                          className="w-full rounded-2xl border-none bg-accent/30 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/20 focus:bg-accent/50 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
+                          className="w-full rounded-2xl border-none bg-accent/90 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/40 focus:bg-accent/90 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
                           placeholder="Your first name"
                           value={formState.firstName}
                           onChange={(e) => setFormState({ ...formState, firstName: e.target.value })}
@@ -122,7 +127,7 @@ function ContactUsPage() {
                       <input
                         type="email"
                         required
-                        className="w-full rounded-2xl border-none bg-accent/30 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/20 focus:bg-accent/50 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
+                        className="w-full rounded-2xl border-none bg-accent/90 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/40 focus:bg-accent/90 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
                         placeholder="example@email.com"
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
@@ -133,7 +138,7 @@ function ContactUsPage() {
                       <label className="text-[13px] font-bold text-navy/40 uppercase tracking-widest pl-1">Phone number</label>
                       <input
                         type="tel"
-                        className="w-full rounded-2xl border-none bg-accent/30 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/20 focus:bg-accent/50 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
+                        className="w-full rounded-2xl border-none bg-accent/90 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/40 focus:bg-accent/90 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
                         placeholder="+1 (555) 000-0000"
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
@@ -145,7 +150,7 @@ function ContactUsPage() {
                       <textarea
                         rows={4}
                         required
-                        className="w-full rounded-2xl border-none bg-accent/30 px-6 py-5 text-sm font-semibold text-navy placeholder:text-navy/20 focus:bg-accent/50 focus:ring-2 focus:ring-orange/20 transition-all outline-none resize-none"
+                        className="w-full rounded-2xl border-none bg-accent/90 px-6 py-5 text-sm font-semibold text-navy placeholder:text-navy/40 focus:bg-accent/90 focus:ring-2 focus:ring-orange/20 transition-all outline-none resize-none"
                         placeholder="How can we help you?"
                         value={formState.message}
                         onChange={(e) => setFormState({ ...formState, message: e.target.value })}

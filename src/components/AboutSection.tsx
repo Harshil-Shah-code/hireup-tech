@@ -36,7 +36,7 @@ export function AboutSection() {
             <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
               Who We Are
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
               So, What Is HireUp Tech Careers?
             </h2>
             <p className="mt-5 text-navy-soft leading-relaxed">

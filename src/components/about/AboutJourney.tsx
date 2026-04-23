@@ -7,24 +7,24 @@ import img2025 from "@/assets/journey-2025.jpg";
 import img2026 from "@/assets/journey-2026.jpg";
 
 const journey = [
-  {
-    year: "2021",
-    image: img2021,
-    title: "The Making of HireUp",
-    body: "HireUp started with a simple question: why are talented international students struggling to get jobs in the USA? A small group of friends decided to do something about it. With no office and no structure, they began helping students from home — laptops, late nights, and lots of determination.\n\nBy 2022, referrals kept growing and people started trusting us with their careers. There was no fancy setup, but consistency made every placement count.",
-  },
-  {
-    year: "2022",
-    image: img2022,
-    title: "When Things Started Getting Real",
-    body: "A few students turned into many, and referrals kept growing. People started trusting us with something serious — their careers. There was no fancy setup, but there was consistency. Every placement added pressure and responsibility. It was no longer just helping; it was becoming a commitment.",
-  },
-  {
-    year: "2023",
-    image: img2023,
-    title: "The Leap That Changed Everything",
-    body: "Growth demanded a decision: stay comfortable or take a risk. That's when the first office came in, with a team of 15–20 people. For the first time, HireUp had structure and direction. Roles were defined, systems were introduced, and processes began. This was the year HireUp truly became real.",
-  },
+  // {
+  //   year: "2021",
+  //   image: img2021,
+  //   title: "The Making of HireUp",
+  //   body: "HireUp started with a simple question: why are talented international students struggling to get jobs in the USA? A small group of friends decided to do something about it. With no office and no structure, they began helping students from home — laptops, late nights, and lots of determination.\n\nBy 2022, referrals kept growing and people started trusting us with their careers. There was no fancy setup, but consistency made every placement count.",
+  // },
+  // {
+  //   year: "2022",
+  //   image: img2022,
+  //   title: "When Things Started Getting Real",
+  //   body: "A few students turned into many, and referrals kept growing. People started trusting us with something serious — their careers. There was no fancy setup, but there was consistency. Every placement added pressure and responsibility. It was no longer just helping; it was becoming a commitment.",
+  // },
+  // {
+  //   year: "2023",
+  //   image: img2023,
+  //   title: "The Leap That Changed Everything",
+  //   body: "Growth demanded a decision: stay comfortable or take a risk. That's when the first office came in, with a team of 15–20 people. For the first time, HireUp had structure and direction. Roles were defined, systems were introduced, and processes began. This was the year HireUp truly became real.",
+  // },
   {
     year: "2024",
     image: img2024,
@@ -53,7 +53,7 @@ export function AboutJourney() {
     <section className="py-24 bg-white">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
             Our Journey of
             <br />
             Building Trust in Recruitment
@@ -96,7 +96,7 @@ export function AboutJourney() {
                 aria-hidden
                 className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 lg:opacity-100"
               />
-              
+
               {/* Desktop Navigation Overlay */}
               <div className="hidden lg:flex absolute bottom-6 right-6 gap-2">
                 {journey.map((j, i) => (
@@ -122,12 +122,12 @@ export function AboutJourney() {
                 JOURNEY · {item.year}
               </span>
             </div>
-            
+
             <div className="flex-grow flex flex-col min-h-0">
-              <h3 className="text-2xl xl:text-3xl font-extrabold text-[#0A1D37] leading-[1.1] mb-5 flex-shrink-0">
+              <h3 className="text-2xl xl:text-3xl font-bold text-[#0A1D37] leading-[1.1] mb-5 flex-shrink-0">
                 {item.title}
               </h3>
-              
+
               <div className="flex-grow min-h-0">
                 <div className="text-[#435366] leading-relaxed text-[15px] line-clamp-[10] xl:line-clamp-[12]">
                   {item.body.split("\n\n").map((p, i) => (

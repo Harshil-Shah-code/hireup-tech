@@ -17,7 +17,7 @@ export function Services() {
           <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
             Find Your Right Job
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
             Services We Provide
           </h2>
           <p className="mt-4 text-navy-soft">

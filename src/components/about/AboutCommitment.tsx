@@ -37,7 +37,7 @@ export function AboutCommitment() {
           <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
             Our Values
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
             Our Commitment to Individuals and Companies
           </h2>
           <p className="mt-5 text-navy-soft leading-relaxed">
@@ -57,7 +57,7 @@ export function AboutCommitment() {
                 <it.icon className="w-5 h-5" strokeWidth={2} />
               </div>
 
-              <h3 className="text-xl font-extrabold mb-3 leading-snug text-navy transition-colors duration-300 group-hover:text-white">
+              <h3 className="text-xl font-bold mb-3 leading-snug text-navy transition-colors duration-300 group-hover:text-white">
                 {it.title}
               </h3>
               <p className="text-sm leading-relaxed text-navy-soft transition-colors duration-300 group-hover:text-white/85">

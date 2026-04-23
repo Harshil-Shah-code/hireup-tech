@@ -12,7 +12,7 @@ export function Contact() {
             <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
               Get In Touch
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
               Let's Build Your Next Career Move
             </h2>
             <p className="mt-4 text-navy-soft max-w-md">

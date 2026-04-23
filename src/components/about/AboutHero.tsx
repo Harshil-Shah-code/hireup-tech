@@ -16,7 +16,7 @@ export function AboutHero() {
             <span className="inline-block text-xs font-bold tracking-[0.25em] text-white uppercase mb-6 bg-white/10 backdrop-blur-md border border-white/15 px-5 py-2 rounded-full">
               About HireUp Tech Careers
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-[1.05]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05]">
               Connecting Talent with Opportunity Since 2021
             </h1>
             <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-xl">

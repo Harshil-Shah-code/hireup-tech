@@ -8,7 +8,7 @@ export function AboutCTA() {
         <div className="relative overflow-hidden rounded-[2.5rem] bg-[#F2F2EC]">
           <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
             <div className="p-10 sm:p-16 lg:p-20 order-2 lg:order-1">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1D37] leading-[1.1] mb-8">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0A1D37] leading-[1.1] mb-8">
                 Ready to Take <br /> the Next Step?
               </h2>
               <p className="text-[#435366] max-w-md leading-relaxed text-sm lg:text-base mb-12">
