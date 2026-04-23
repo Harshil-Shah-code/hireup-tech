@@ -1,0 +1,228 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-pill: 9999px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-navy: var(--navy);
+  --color-navy-soft: var(--navy-soft);
+  --color-sky-tint: var(--sky-tint);
+  --color-orange: var(--orange);
+  --color-orange-soft: var(--orange-soft);
+
+  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--navy) 25%, transparent);
+  --shadow-card: 0 8px 24px -10px color-mix(in oklab, var(--navy) 18%, transparent);
+  --shadow-pop: 0 20px 50px -20px color-mix(in oklab, var(--orange) 45%, transparent);
+
+  --gradient-sky: linear-gradient(180deg, oklch(0.94 0.04 230) 0%, oklch(0.88 0.07 232) 55%, oklch(0.82 0.09 232) 100%);
+  --gradient-orange: linear-gradient(135deg, var(--orange) 0%, oklch(0.74 0.18 45) 100%);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Brand: HireUp orange + navy */
+  --orange: oklch(0.7 0.19 42);
+  /* ~#F97316 */
+  --orange-soft: oklch(0.95 0.05 55);
+  --navy: oklch(0.28 0.1 265);
+  /* deep navy headings */
+  --navy-soft: oklch(0.45 0.09 260);
+  --sky-tint: oklch(0.97 0.02 230);
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.22 0.04 264);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 264);
+
+  --primary: var(--orange);
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: var(--navy);
+  --secondary-foreground: oklch(1 0 0);
+
+  --muted: oklch(0.97 0.005 240);
+  --muted-foreground: oklch(0.5 0.02 260);
+
+  --accent: var(--sky-tint);
+  --accent-foreground: var(--navy);
+
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.92 0.01 250);
+  --input: oklch(0.92 0.01 250);
+  --ring: var(--orange);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-sky {
+    background-image: var(--gradient-sky);
+  }
+
+  .bg-gradient-orange {
+    background-image: var(--gradient-orange);
+  }
+
+  .text-navy {
+    color: var(--navy);
+  }
+
+  .text-orange {
+    color: var(--orange);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-pop {
+    box-shadow: var(--shadow-pop);
+  }
+
+  /* Marquee */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Floating animations */
+  .float-slow {
+    animation: float 7s ease-in-out infinite;
+  }
+
+  .float-slower {
+    animation: float 10s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+
+  /* Cloud drift */
+  .drift-x {
+    animation: driftX 22s ease-in-out infinite;
+  }
+
+  @keyframes driftX {
+
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(40px);
+    }
+  }
+
+  .glass-card {
+    background: color-mix(in oklab, white 60%, transparent);
+    backdrop-filter: blur(12px);
+    border: 1px solid color-mix(in oklab, white 40%, transparent);
+  }
+
+  .fade-up {
+    animation: fadeUp 0.8s ease-out both;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+}
