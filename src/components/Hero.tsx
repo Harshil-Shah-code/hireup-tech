@@ -8,10 +8,16 @@ import jobSeekers from "@/assets/job-seekers.jpg";
 import { ArrowRight, Phone, Star } from "lucide-react";
 
 const headlines = [
-  { first: "Empowering Your Career,", second: "Across the USA" },
-  { first: "Secure Your Future,", second: "With Top Placements" },
-  { first: "Bridge the Gap,", second: "To Your Dream Job" },
-  { first: "Transform Your Dreams,", second: "Into Reality" },
+  {
+    first: "Empowering Your Career,",
+    second: "Across the USA",
+    text: "Connecting top talent with leading organizations worldwide through smart recruitment, faster hiring processes, and dependable staffing solutions built on trust and expertise."
+  },
+  {
+    first: "Secure Your Future,",
+    second: "With Top Placements",
+    text: "Bridge the gap to your dream job with our comprehensive recruitment services, career coaching, and extensive network of industry-leading partners."
+  },
 ];
 
 export function Hero() {
@@ -83,27 +89,42 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Headline */}
         <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <div className="min-h-[120px] sm:min-h-[160px] lg:min-h-[220px] flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.h1
+          <div className="min-h-[220px] sm:min-h-[260px] lg:min-h-[320px] flex items-center justify-center relative">
+            <AnimatePresence initial={false} mode="popLayout">
+              <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -30, filter: "blur(10px)" }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="text-4xl sm:text-4xl lg:text-6xl font-bold text-white drop-shadow-[0_2px_12px_rgba(30,58,138,0.25)] leading-[1.05]"
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="w-full"
               >
-                {headlines[index].first}<br />
-                <span className="text-white">{headlines[index].second}</span>
-              </motion.h1>
+                <motion.h1
+                  variants={{
+                    initial: { opacity: 0, y: 30, filter: "blur(10px)" },
+                    animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+                    exit: { opacity: 0, y: -30, filter: "blur(10px)" }
+                  }}
+                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-4xl sm:text-4xl lg:text-6xl font-bold text-white drop-shadow-[0_2px_12px_rgba(30,58,138,0.25)] leading-[1.05]"
+                >
+                  {headlines[index].first}<br />
+                  <span className="text-white">{headlines[index].second}</span>
+                </motion.h1>
+                <motion.p
+                  variants={{
+                    initial: { opacity: 0, y: -30, filter: "blur(10px)" },
+                    animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+                    exit: { opacity: 0, y: 30, filter: "blur(10px)" }
+                  }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+                  className="mt-6 text-base sm:text-lg text-white/95 drop-shadow max-w-2xl mx-auto"
+                >
+                  {headlines[index].text}
+                </motion.p>
+              </motion.div>
             </AnimatePresence>
           </div>
-          <p className="text-base sm:text-lg text-white/95 drop-shadow max-w-2xl mx-auto">
-            Connecting top talent with leading organizations worldwide through smart recruitment,
-            faster hiring processes, and dependable staffing solutions built on trust and expertise.
-          </p>
 
           <div className="mt-9 flex items-center justify-center gap-3 flex-wrap">
             <button

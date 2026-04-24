@@ -44,7 +44,7 @@ export function Stats() {
                   {/* Year Tag - Positioned to overlap */}
                   <div className={`
                     absolute top-0 px-4 py-1.5 rounded-full text-[10px] font-bold z-20 shadow-sm
-                    ${item.highlight ? 'bg-white text-black' : 'bg-[#182ED1] text-white'}
+                    ${item.highlight ? 'bg-white text-black' : 'bg-primary text-white'}
                   `}>
                     {item.year}
                   </div>

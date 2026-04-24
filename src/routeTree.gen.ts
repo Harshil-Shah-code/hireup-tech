@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ReferEarnRouteImport } from './routes/refer-earn'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ReferEarnRoute = ReferEarnRouteImport.update({
+  id: '/refer-earn',
+  path: '/refer-earn',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactUsRoute = ContactUsRouteImport.update({
   id: '/contact-us',
   path: '/contact-us',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact-us': typeof ContactUsRoute
+  '/refer-earn': typeof ReferEarnRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact-us': typeof ContactUsRoute
+  '/refer-earn': typeof ReferEarnRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact-us': typeof ContactUsRoute
+  '/refer-earn': typeof ReferEarnRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact-us'
+  fullPaths: '/' | '/about' | '/contact-us' | '/refer-earn'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact-us'
-  id: '__root__' | '/' | '/about' | '/contact-us'
+  to: '/' | '/about' | '/contact-us' | '/refer-earn'
+  id: '__root__' | '/' | '/about' | '/contact-us' | '/refer-earn'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactUsRoute: typeof ContactUsRoute
+  ReferEarnRoute: typeof ReferEarnRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/refer-earn': {
+      id: '/refer-earn'
+      path: '/refer-earn'
+      fullPath: '/refer-earn'
+      preLoaderRoute: typeof ReferEarnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact-us': {
       id: '/contact-us'
       path: '/contact-us'
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactUsRoute: ContactUsRoute,
+  ReferEarnRoute: ReferEarnRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
