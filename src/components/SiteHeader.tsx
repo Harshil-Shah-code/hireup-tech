@@ -2,23 +2,23 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Menu, X, Phone, ChevronDown, BadgeCheck, Users, UserCheck,
-  ShieldCheck, Calculator, GraduationCap,
+  ShieldCheck, GraduationCap,
 } from "lucide-react";
 
 const services = [
-  { icon: BadgeCheck, title: "Job Placement", text: "Your Partner in Career Success Across the USA" },
-  { icon: Users, title: "Recruitment & Staffing", text: "Technical Staffing Solutions That Scale Your Business" },
-  { icon: UserCheck, title: "Talent Acquisition", text: "Full-Cycle Talent Acquisition Solutions" },
-  { icon: ShieldCheck, title: "Background Verification", text: "Comprehensive Employee Background Check USA" },
-  { icon: Calculator, title: "Accounting & Taxes", text: "Your seamless Accounting and Tax partner" },
-  { icon: GraduationCap, title: "IT Training", text: "Training that prepares candidates for real world careers" },
+  { icon: BadgeCheck, title: "Job Placement", text: "Your partner in career success across the USA", to: "/services/job-placement" },
+  { icon: Users, title: "Recruitment & Staffing", text: "Technical staffing solutions that scale your business", to: "/services/recruitment-staffing" },
+  { icon: UserCheck, title: "Talent Acquisition", text: "Full-cycle talent acquisition solutions", to: "/services/talent-acquisition" },
+  { icon: ShieldCheck, title: "Background Verification", text: "Comprehensive employee background checks USA", to: "/services/background-verification" },
+  { icon: GraduationCap, title: "IT Training", text: "Training that prepares candidates for real-world careers", to: "/services/it-training" },
 ];
 
 const nav = [
   { label: "Services", to: "/#services", hasDropdown: true },
   { label: "About Us", to: "/about" },
   { label: "Refer & Earn", to: "/refer-earn" },
-  { label: "Contact", to: "/contact-us" },
+  { label: "Career", to: "/#career" },
+  { label: "Contact", to: "/#contact" },
 ];
 
 export function SiteHeader() {
@@ -36,19 +36,21 @@ export function SiteHeader() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
       {/* Decorative cloud blobs behind the pill */}
-      {/* <div aria-hidden className="absolute inset-x-0 top-0 h-32 overflow-hidden">
+      <div aria-hidden className="absolute inset-x-0 top-0 h-32 overflow-hidden">
         <div className="absolute -top-10 left-[8%] w-72 h-32 rounded-full bg-white/40 blur-2xl float-slow" />
         <div className="absolute -top-6 left-[38%] w-96 h-28 rounded-full bg-white/35 blur-2xl float-slower" />
         <div className="absolute -top-12 right-[10%] w-80 h-32 rounded-full bg-white/40 blur-2xl float-slow" />
-      </div> */}
+      </div>
 
-      <div className="pointer-events-auto mx-auto max-w-7xl px-4 sm:px-6 mt-4">
+      <div
+        className="pointer-events-auto mx-auto max-w-7xl px-4 sm:px-6 mt-4"
+        onMouseLeave={() => setServicesOpen(false)}
+      >
         <div
           className="relative flex items-center justify-between rounded-full pl-5 pr-2 sm:pl-6 sm:pr-2.5 h-16 overflow-hidden
             border border-white/40
             bg-gradient-to-b from-white/30 via-navy/15 to-navy/25
             backdrop-blur-2xl backdrop-saturate-150"
-          onMouseLeave={() => setServicesOpen(false)}
         >
           {/* Glossy highlight sweep */}
           <span
@@ -63,8 +65,8 @@ export function SiteHeader() {
 
           <Link to="/" className="relative flex items-center gap-2 group">
             <div className="flex items-baseline">
-              <span className="text-2xl font-bold text-orange tracking-tight">Hire</span>
-              <span className="text-2xl font-bold text-white tracking-tight">Up</span>
+              <span className="text-2xl font-extrabold text-orange tracking-tight">Hire</span>
+              <span className="text-2xl font-extrabold text-white tracking-tight">Up</span>
             </div>
             <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-white/80 hidden sm:block">
               Tech Careers
@@ -90,15 +92,15 @@ export function SiteHeader() {
           </nav>
 
           <div className="relative hidden lg:flex items-center">
-            <Link
-              to="/contact-us"
+            <a
+              href="#contact"
               className="group inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur pl-5 pr-2 py-2 text-sm font-semibold text-navy hover:bg-orange hover:text-white transition-all"
             >
               Book Free Call
               <span className="grid place-items-center w-9 h-9 rounded-full bg-orange text-white group-hover:bg-white group-hover:text-orange transition-colors">
                 <Phone className="w-4 h-4" />
               </span>
-            </Link>
+            </a>
           </div>
 
           <button
@@ -115,13 +117,13 @@ export function SiteHeader() {
           <div
             className="hidden lg:block mt-2 rounded-3xl border border-white/50 bg-white/95 backdrop-blur-2xl overflow-hidden"
             onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
           >
             <div className="grid grid-cols-3 gap-1 p-4">
               {services.map((s) => (
-                <a
+                <Link
                   key={s.title}
-                  href="#services"
+                  to={s.to}
+                  onClick={() => setServicesOpen(false)}
                   className="flex items-start gap-3 p-4 rounded-2xl hover:bg-accent transition-colors group"
                 >
                   <div className="shrink-0 w-10 h-10 rounded-xl grid place-items-center bg-orange/10 text-orange group-hover:bg-orange group-hover:text-white transition-colors">
@@ -131,7 +133,7 @@ export function SiteHeader() {
                     <h4 className="text-sm font-bold text-navy mb-0.5">{s.title}</h4>
                     <p className="text-xs text-navy-soft leading-snug">{s.text}</p>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -153,23 +155,23 @@ export function SiteHeader() {
               ))}
               <div className="border-t border-border my-2" />
               {services.map((s) => (
-                <a
+                <Link
                   key={s.title}
-                  href="#services"
+                  to={s.to}
                   onClick={() => setOpen(false)}
                   className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-navy hover:bg-accent rounded-xl"
                 >
                   <s.icon className="w-4 h-4 text-orange" />
                   {s.title}
-                </a>
+                </Link>
               ))}
-              <Link
-                to="/contact-us"
+              <a
+                href="#contact"
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-orange px-5 py-3 text-sm font-semibold text-white"
               >
                 <Phone className="w-4 h-4" /> Book Free Call
-              </Link>
+              </a>
             </div>
           </div>
         )}

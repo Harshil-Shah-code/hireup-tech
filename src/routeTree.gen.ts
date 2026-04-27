@@ -13,6 +13,11 @@ import { Route as ReferEarnRouteImport } from './routes/refer-earn'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesTalentAcquisitionRouteImport } from './routes/services.talent-acquisition'
+import { Route as ServicesRecruitmentStaffingRouteImport } from './routes/services.recruitment-staffing'
+import { Route as ServicesJobPlacementRouteImport } from './routes/services.job-placement'
+import { Route as ServicesItTrainingRouteImport } from './routes/services.it-training'
+import { Route as ServicesBackgroundVerificationRouteImport } from './routes/services.background-verification'
 
 const ReferEarnRoute = ReferEarnRouteImport.update({
   id: '/refer-earn',
@@ -34,18 +39,56 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesTalentAcquisitionRoute =
+  ServicesTalentAcquisitionRouteImport.update({
+    id: '/services/talent-acquisition',
+    path: '/services/talent-acquisition',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesRecruitmentStaffingRoute =
+  ServicesRecruitmentStaffingRouteImport.update({
+    id: '/services/recruitment-staffing',
+    path: '/services/recruitment-staffing',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesJobPlacementRoute = ServicesJobPlacementRouteImport.update({
+  id: '/services/job-placement',
+  path: '/services/job-placement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesItTrainingRoute = ServicesItTrainingRouteImport.update({
+  id: '/services/it-training',
+  path: '/services/it-training',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesBackgroundVerificationRoute =
+  ServicesBackgroundVerificationRouteImport.update({
+    id: '/services/background-verification',
+    path: '/services/background-verification',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact-us': typeof ContactUsRoute
   '/refer-earn': typeof ReferEarnRoute
+  '/services/background-verification': typeof ServicesBackgroundVerificationRoute
+  '/services/it-training': typeof ServicesItTrainingRoute
+  '/services/job-placement': typeof ServicesJobPlacementRoute
+  '/services/recruitment-staffing': typeof ServicesRecruitmentStaffingRoute
+  '/services/talent-acquisition': typeof ServicesTalentAcquisitionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact-us': typeof ContactUsRoute
   '/refer-earn': typeof ReferEarnRoute
+  '/services/background-verification': typeof ServicesBackgroundVerificationRoute
+  '/services/it-training': typeof ServicesItTrainingRoute
+  '/services/job-placement': typeof ServicesJobPlacementRoute
+  '/services/recruitment-staffing': typeof ServicesRecruitmentStaffingRoute
+  '/services/talent-acquisition': typeof ServicesTalentAcquisitionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +96,46 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact-us': typeof ContactUsRoute
   '/refer-earn': typeof ReferEarnRoute
+  '/services/background-verification': typeof ServicesBackgroundVerificationRoute
+  '/services/it-training': typeof ServicesItTrainingRoute
+  '/services/job-placement': typeof ServicesJobPlacementRoute
+  '/services/recruitment-staffing': typeof ServicesRecruitmentStaffingRoute
+  '/services/talent-acquisition': typeof ServicesTalentAcquisitionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact-us' | '/refer-earn'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact-us'
+    | '/refer-earn'
+    | '/services/background-verification'
+    | '/services/it-training'
+    | '/services/job-placement'
+    | '/services/recruitment-staffing'
+    | '/services/talent-acquisition'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact-us' | '/refer-earn'
-  id: '__root__' | '/' | '/about' | '/contact-us' | '/refer-earn'
+  to:
+    | '/'
+    | '/about'
+    | '/contact-us'
+    | '/refer-earn'
+    | '/services/background-verification'
+    | '/services/it-training'
+    | '/services/job-placement'
+    | '/services/recruitment-staffing'
+    | '/services/talent-acquisition'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact-us'
+    | '/refer-earn'
+    | '/services/background-verification'
+    | '/services/it-training'
+    | '/services/job-placement'
+    | '/services/recruitment-staffing'
+    | '/services/talent-acquisition'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +143,11 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactUsRoute: typeof ContactUsRoute
   ReferEarnRoute: typeof ReferEarnRoute
+  ServicesBackgroundVerificationRoute: typeof ServicesBackgroundVerificationRoute
+  ServicesItTrainingRoute: typeof ServicesItTrainingRoute
+  ServicesJobPlacementRoute: typeof ServicesJobPlacementRoute
+  ServicesRecruitmentStaffingRoute: typeof ServicesRecruitmentStaffingRoute
+  ServicesTalentAcquisitionRoute: typeof ServicesTalentAcquisitionRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +180,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/talent-acquisition': {
+      id: '/services/talent-acquisition'
+      path: '/services/talent-acquisition'
+      fullPath: '/services/talent-acquisition'
+      preLoaderRoute: typeof ServicesTalentAcquisitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/recruitment-staffing': {
+      id: '/services/recruitment-staffing'
+      path: '/services/recruitment-staffing'
+      fullPath: '/services/recruitment-staffing'
+      preLoaderRoute: typeof ServicesRecruitmentStaffingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/job-placement': {
+      id: '/services/job-placement'
+      path: '/services/job-placement'
+      fullPath: '/services/job-placement'
+      preLoaderRoute: typeof ServicesJobPlacementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/it-training': {
+      id: '/services/it-training'
+      path: '/services/it-training'
+      fullPath: '/services/it-training'
+      preLoaderRoute: typeof ServicesItTrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/background-verification': {
+      id: '/services/background-verification'
+      path: '/services/background-verification'
+      fullPath: '/services/background-verification'
+      preLoaderRoute: typeof ServicesBackgroundVerificationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +223,11 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactUsRoute: ContactUsRoute,
   ReferEarnRoute: ReferEarnRoute,
+  ServicesBackgroundVerificationRoute: ServicesBackgroundVerificationRoute,
+  ServicesItTrainingRoute: ServicesItTrainingRoute,
+  ServicesJobPlacementRoute: ServicesJobPlacementRoute,
+  ServicesRecruitmentStaffingRoute: ServicesRecruitmentStaffingRoute,
+  ServicesTalentAcquisitionRoute: ServicesTalentAcquisitionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

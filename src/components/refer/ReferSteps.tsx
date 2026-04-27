@@ -25,9 +25,9 @@ const steps: Step[] = [
     description: "Share your unique referral link or submit your friend's contact details through our referral portal.",
     tags: ["Quick Share", "Direct Link"],
     icon: UserPlus,
-    color: "#185FA5",
+    color: "oklch(0.7 0.19 42)", // Orange
     label: "Refer a Friend",
-    sublabel: "Start the journey",
+    sublabel: "Connect your network with top opportunities by sharing your unique referral link or submitting friend details directly through our secure portal to start their journey.",
   },
   {
     badge: "Step 2 of 3",
@@ -35,9 +35,9 @@ const steps: Step[] = [
     description: "Your referral signs up for one of our placement plans (Starter, Premium, Elite, or Pro).",
     tags: ["Easy Signup", "Expert Support"],
     icon: ClipboardCheck,
-    color: "#0F6E56",
+    color: "oklch(0.28 0.1 265)", // Navy
     label: "They Enroll",
-    sublabel: "Placement begins",
+    sublabel: "Once your friend chooses and enrolls in a professional placement plan, our expert team immediately begins working on their personalized career success strategy.",
   },
   {
     badge: "Step 3 of 3",
@@ -45,9 +45,9 @@ const steps: Step[] = [
     description: "Get instant signup bonus, plus additional placement bonus when they land their dream job!",
     tags: ["Cash Bonus", "Career Success"],
     icon: Gift,
-    color: "#534AB7",
+    color: "oklch(0.7 0.19 42)", // Orange
     label: "Earn Rewards",
-    sublabel: "Celebrate success",
+    sublabel: "Celebrate as you receive an instant signup bonus upon their enrollment, followed by a substantial placement reward once they successfully land their dream role.",
   },
 ];
 
@@ -187,7 +187,7 @@ export function ReferSteps() {
     <section
       ref={sectionRef}
       id="referral-steps"
-      className="py-12 bg-white overflow-hidden selection:bg-navy/10"
+      className="py-12 bg-sky-tint/50 overflow-hidden selection:bg-navy/10"
       onTouchStart={handleInteraction}
       onMouseDown={handleInteraction}
     >
@@ -210,27 +210,31 @@ export function ReferSteps() {
                   data-index={i}
                   onTouchStart={() => handleTouchStart(i)}
                   className={cn(
-                    "flex-shrink-0 w-[80vw] aspect-[4/5] p-10 rounded-[32px] bg-white border border-navy/10 scroll-snap-align-center transition-all duration-500 flex flex-col items-center justify-center text-center",
-                    isActive ? "scale-100 opacity-100 border-navy shadow-card rotate-0" : "scale-90 opacity-40 shadow-none border-navy/5"
+                    "flex-shrink-0 w-[80vw] p-10 rounded-[40px] border scroll-snap-align-center transition-all duration-500 flex flex-col items-center justify-center text-center text-white border-transparent",
+                    isActive ? "scale-100 opacity-100 shadow-card rotate-0" : "scale-90 opacity-40 shadow-none"
                   )}
+                  style={{
+                    backgroundColor: step.color,
+                  }}
                 >
                   <div className="relative mb-8">
                     <div
-                      className="absolute inset-0 scale-[1.8] blur-xl opacity-20"
-                      style={{ backgroundColor: step.color }}
+                      className="absolute inset-0 scale-[1.8] blur-xl opacity-40 transition-opacity duration-300"
+                      style={{ backgroundColor: 'white' }}
                     />
                     <div
-                      className="relative w-24 h-24 rounded-full flex items-center justify-center mb-0 z-10 border-2 border-white shadow-inner"
-                      style={{ backgroundColor: `${step.color}15`, color: step.color }}
+                      className="relative w-24 h-24 rounded-full flex items-center justify-center mb-0 z-10 border-2 border-white shadow-inner bg-white/20 text-white"
                     >
                       <step.icon className="w-10 h-10" />
                     </div>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center mb-6 shadow-md border border-navy/10">
-                    <span className="text-sm font-bold" style={{ color: step.color }}>{i + 1}</span>
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center mb-6 shadow-md border bg-white/20 border-white/30"
+                  >
+                    <span className="text-sm font-bold text-white">{i + 1}</span>
                   </div>
-                  <h4 className="text-2xl font-medium text-navy mb-2">{step.label}</h4>
-                  <p className="text-base text-navy-soft">{step.sublabel}</p>
+                  <h4 className="text-2xl font-bold mb-3 tracking-tight text-white">{step.label}</h4>
+                  <p className="text-base leading-relaxed text-white/90">{step.sublabel}</p>
                 </div>
               );
             })}
@@ -361,7 +365,6 @@ export function ReferSteps() {
               {steps.map((step, i) => {
                 const slot = (i - activeStep + 1 + 3) % 3;
                 const isActive = slot === 1;
-                const isDelayedActive = (delayedZIndex - activeStep + 1 + 3) % 3 === 1;
 
                 const xPositions = [-120, 0, 120];
                 const rotations = [-15, 0, 15];
@@ -387,33 +390,33 @@ export function ReferSteps() {
                       transform: `translate(calc(-50% + ${xOffset}px), -50%) rotate(${rotation}deg) scale(${scale})`,
                       opacity,
                       zIndex,
+                      backgroundColor: step.color,
                     }}
                     className={cn(
-                      "absolute top-1/2 left-1/2 w-[280px] lg:w-[320px] aspect-[4/5] p-10 rounded-[32px] bg-white border border-border shadow-soft transition-[transform,opacity,border-color,z-index] duration-500",
-                      "cursor-pointer pointer-events-auto flex flex-col items-center justify-center text-center",
-                      isActive ? "border-navy shadow-card" : "hover:border-navy/20"
+                      "absolute top-1/2 left-1/2 w-[320px] lg:w-[360px] p-10 rounded-[40px] border border-transparent shadow-soft transition-all duration-500",
+                      "cursor-pointer pointer-events-auto flex flex-col items-center justify-center text-center text-white",
+                      isActive ? "shadow-card scale-110" : "hover:border-white/20"
                     )}
                   >
                     <div className="pointer-events-none w-full flex flex-col items-center">
                       <div className="relative mb-8">
                         <div
-                          className="absolute inset-0 scale-[1.8] blur-xl opacity-20 transition-opacity duration-300"
-                          style={{ backgroundColor: step.color }}
+                          className="absolute inset-0 scale-[1.8] blur-xl opacity-40 transition-opacity duration-300"
+                          style={{ backgroundColor: 'white' }}
                         />
                         <div
-                          className="relative w-24 h-24 rounded-full flex items-center justify-center z-10 overflow-hidden border-2 border-white shadow-inner"
-                          style={{ backgroundColor: `${step.color}15`, color: step.color }}
+                          className="relative w-24 h-24 rounded-full flex items-center justify-center z-10 overflow-hidden border-2 border-white shadow-inner bg-white/20 text-white"
                         >
                           <step.icon className="w-10 h-10" />
                         </div>
                       </div>
 
-                      <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center mb-6 shadow-md border border-border">
-                        <span className="text-sm font-bold" style={{ color: step.color }}>{i + 1}</span>
+                      <div className="w-9 h-9 rounded-full flex items-center justify-center mb-6 shadow-md border bg-white/20 border-white/30">
+                        <span className="text-sm font-bold text-white">{i + 1}</span>
                       </div>
 
-                      <h4 className="text-xl font-medium text-navy mb-2">{step.label}</h4>
-                      <p className="text-sm text-navy-soft">{step.sublabel}</p>
+                      <h4 className="text-xl font-bold mb-3 tracking-tight text-white">{step.label}</h4>
+                      <p className="text-sm leading-relaxed text-white/90">{step.sublabel}</p>
                     </div>
                   </div>
                 );
