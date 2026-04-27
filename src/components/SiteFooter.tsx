@@ -11,11 +11,11 @@ export function SiteFooter() {
 
           {/* Content Wrap */}
           <div className="flex-1 p-8 sm:p-12 lg:p-16 lg:pb-20 relative z-10">
-            <h2 className="text-xl sm:text-4xl lg:text-3xl font-bold text-white leading-[1.2] lg:leading-[1.1] mb-2lg:mb-6">
+            <h2 className="text-h2 text-white mb-2 lg:mb-6">
               Got a Job Hunt Stress or <br className="hidden sm:block" />
               Hiring Problem? We Love Those
             </h2>
-            <div className="text-white/85 text-sm lg:text-base leading-relaxed mb-5 lg:mb-10 max-w-xl">
+            <div className="text-body text-white/85 mb-5 lg:mb-10 max-w-xl">
               Big careers and great teams usually start with a simple message.
               Send us one and let's see what we can build together.
             </div>
@@ -55,10 +55,10 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Services Column */}
           <div>
-            <h4 className="text-[11px] font-bold tracking-[0.2em] text-white/50 uppercase mb-8">
+            <h4 className="text-overline text-white/50 mb-8">
               Our Services
             </h4>
-            <ul className="space-y-4 text-sm font-medium">
+            <ul className="space-y-4 text-body-sm">
               {["Job Placement", "Recruitment & Staffing", "Background Verification", "Talent Acquisition", "Payroll & Teams", "IT Training"].map((item) => (
                 <li key={item}>
                   <a href="#" className="text-white/60 hover:text-white transition-colors">{item}</a>
@@ -69,10 +69,10 @@ export function SiteFooter() {
 
           {/* Company Column */}
           <div>
-            <h4 className="text-[11px] font-bold tracking-[0.2em] text-white/50 uppercase mb-8">
+            <h4 className="text-overline text-white/50 mb-8">
               Company
             </h4>
-            <ul className="space-y-4 text-sm font-medium">
+            <ul className="space-y-4 text-body-sm">
               <li><Link to="/" className="text-white/60 hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" className="text-white/60 hover:text-white transition-colors">About Us</Link></li>
               <li><a href="#" className="text-white/60 hover:text-white transition-colors">Refer and Earn</a></li>
@@ -82,11 +82,11 @@ export function SiteFooter() {
 
           {/* Contact Column */}
           <div className="lg:col-span-2">
-            <h4 className="text-[11px] font-bold tracking-[0.2em] text-white/50 uppercase mb-8">
+            <h4 className="text-overline text-white/50 mb-8">
               Corporate Address
             </h4>
             <div className="space-y-6">
-              <p className="text-white/70 leading-relaxed max-w-xs text-[15px]">
+              <p className="text-white/70 max-w-xs text-body-sm">
                 N Orange St., Wilmington, DE, US, 19801
               </p>
 
@@ -94,7 +94,7 @@ export function SiteFooter() {
                 <div className="w-9 h-9 rounded-full border border-white/20 grid place-items-center group-hover:border-white/40 transition">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span className="text-[15px]">hello@hireuptech.com</span>
+                <span className="text-body-sm">hello@hireuptech.com</span>
               </a>
 
               <div className="flex items-center gap-4 pt-4">

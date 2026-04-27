@@ -233,8 +233,8 @@ export function ReferSteps() {
                   >
                     <span className="text-sm font-bold text-white">{i + 1}</span>
                   </div>
-                  <h4 className="text-2xl font-bold mb-3 tracking-tight text-white">{step.label}</h4>
-                  <p className="text-base leading-relaxed text-white/90">{step.sublabel}</p>
+                  <h4 className="text-h4 mb-3 text-white">{step.label}</h4>
+                  <p className="text-body-sm text-white/90">{step.sublabel}</p>
                 </div>
               );
             })}
@@ -247,18 +247,18 @@ export function ReferSteps() {
           )}>
             <div className="inline-flex mb-6">
               <span
-                className="px-4 py-1.5 rounded-full text-sm font-bold shadow-sm"
+                className="px-4 py-1.5 rounded-full text-overline shadow-sm"
                 style={{ backgroundColor: `${steps[displayedStep].color}15`, color: steps[displayedStep].color }}
               >
                 {steps[displayedStep].badge}
               </span>
             </div>
 
-            <h2 className="text-2xl font-bold text-navy leading-tight mb-6">
+            <h2 className="text-h2 text-navy mb-6">
               {steps[displayedStep].title}
             </h2>
 
-            <p className="text-lg text-navy-soft mb-8 leading-relaxed font-medium">
+            <p className="text-body-lg text-navy-soft mb-8">
               {steps[displayedStep].description}
             </p>
 
@@ -304,18 +304,18 @@ export function ReferSteps() {
             )}>
               <div className="inline-flex mb-6">
                 <span
-                  className="px-4 py-1.5 rounded-full text-sm font-bold shadow-sm"
+                  className="px-4 py-1.5 rounded-full text-overline shadow-sm"
                   style={{ backgroundColor: `${steps[displayedStep].color}15`, color: steps[displayedStep].color }}
                 >
                   {steps[displayedStep].badge}
                 </span>
               </div>
 
-              <h2 className="text-4xl lg:text-4xl font-bold text-navy leading-tight mb-3">
+              <h2 className="text-h2 text-navy mb-3">
                 {steps[displayedStep].title}
               </h2>
 
-              <p className="text-xl text-navy-soft mb-4 max-w-lg leading-relaxed font-medium">
+              <p className="text-body-lg text-navy-soft mb-4 max-w-lg">
                 {steps[displayedStep].description}
               </p>
 
@@ -415,8 +415,8 @@ export function ReferSteps() {
                         <span className="text-sm font-bold text-white">{i + 1}</span>
                       </div>
 
-                      <h4 className="text-xl font-bold mb-3 tracking-tight text-white">{step.label}</h4>
-                      <p className="text-sm leading-relaxed text-white/90">{step.sublabel}</p>
+                      <h4 className="text-h4 mb-3 text-white">{step.label}</h4>
+                      <p className="text-body-sm text-white/90">{step.sublabel}</p>
                     </div>
                   </div>
                 );

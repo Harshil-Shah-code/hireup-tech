@@ -9,13 +9,13 @@ export function Contact() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
-            <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
+            <span className="text-overline text-orange mb-3 block">
               Get In Touch
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
+            <h2 className="text-h2 text-navy">
               Let's Build Your Next Career Move
             </h2>
-            <p className="mt-4 text-navy-soft max-w-md">
+            <p className="mt-4 text-body text-navy-soft max-w-md">
               Stay ahead with the latest job trends, expert tips, and exclusive opportunities.
             </p>
 
@@ -36,15 +36,15 @@ export function Contact() {
             </div>
             <Field label="Phone" type="tel" placeholder="+1" />
             <div className="mt-4">
-              <label className="text-xs font-bold text-navy-soft uppercase tracking-wider">Message</label>
+              <label className="text-overline text-navy-soft mb-1.5 block">Message</label>
               <textarea
                 rows={4}
                 placeholder="How can we help?"
-                className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange/50 focus:border-orange transition"
+                className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-body-sm focus:outline-none focus:ring-2 focus:ring-orange/50 focus:border-orange transition"
               />
             </div>
 
-            <label className="mt-4 flex items-center gap-2 text-sm text-navy-soft">
+            <label className="mt-4 flex items-center gap-2 text-body-sm text-navy-soft">
               <input
                 type="checkbox"
                 checked={accepted}
@@ -71,10 +71,10 @@ export function Contact() {
 function Field({ label, ...rest }: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div className="mt-4 first:mt-0">
-      <label className="text-xs font-bold text-navy-soft uppercase tracking-wider">{label}</label>
+      <label className="text-overline text-navy-soft mb-1.5 block">{label}</label>
       <input
         {...rest}
-        className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange/50 focus:border-orange transition"
+        className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-body-sm focus:outline-none focus:ring-2 focus:ring-orange/50 focus:border-orange transition"
       />
     </div>
   );
@@ -86,7 +86,7 @@ function ContactRow({ icon: Icon, label }: { icon: React.ComponentType<{ classNa
       <div className="w-11 h-11 rounded-xl bg-orange-soft text-orange grid place-items-center">
         <Icon className="w-5 h-5" />
       </div>
-      <span className="text-sm font-semibold text-navy">{label}</span>
+      <span className="text-body-sm font-semibold text-navy">{label}</span>
     </div>
   );
 }

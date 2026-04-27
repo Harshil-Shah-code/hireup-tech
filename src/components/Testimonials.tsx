@@ -38,10 +38,10 @@ export function Testimonials() {
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center mb-14 max-w-3xl mx-auto">
-          <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
+          <span className="text-overline text-orange mb-3 block">
             What Peeps Say
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          <h2 className="text-h2 text-white">
             See What They Have to Say
           </h2>
         </div>
@@ -53,15 +53,15 @@ export function Testimonials() {
               className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 hover:bg-white/10 transition-all hover:-translate-y-1"
             >
               <Quote className="w-8 h-8 text-orange mb-3" />
-              <h4 className="text-white font-bold mb-2">{t.title}</h4>
-              <p className="text-white/80 text-sm leading-relaxed">{t.text}</p>
+              <h4 className="text-h4 text-white mb-2">{t.title}</h4>
+              <p className="text-body-sm text-white/80">{t.text}</p>
               <div className="flex items-center gap-1 mt-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3.5 h-3.5 fill-orange text-orange" />
                 ))}
               </div>
               <div className="mt-4 pt-4 border-t border-white/10">
-                <div className="text-white font-semibold text-sm">{t.name}</div>
+                <div className="text-white font-semibold text-body-sm">{t.name}</div>
                 <div className="text-white/60 text-xs">{t.role}</div>
               </div>
             </div>

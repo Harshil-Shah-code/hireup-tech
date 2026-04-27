@@ -9,13 +9,13 @@ export function ServiceHero({ cfg }: { cfg: ServiceConfig }) {
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
         <div>
-          <span className="inline-block rounded-full bg-white/10 border border-white/15 px-4 py-1.5 text-[11px] font-bold tracking-[0.2em] text-white/90 uppercase mb-6">
+          <span className="text-overline text-white/90 mb-6 bg-white/10 border border-white/15 px-4 py-1.5 rounded-full inline-block">
             {cfg.eyebrow}
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-5xl font-medium leading-[1.05] tracking-tight">
+          <h1 className="text-h1 text-white">
             {cfg.title}
           </h1>
-          <p className="mt-5 text-base sm:text-lg text-white/75 max-w-xl leading-relaxed">
+          <p className="mt-5 text-body-lg text-white/75 max-w-xl">
             {cfg.description}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">

@@ -106,7 +106,7 @@ export function Hero() {
                     exit: { opacity: 0, y: -30, filter: "blur(10px)" }
                   }}
                   transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl sm:text-4xl lg:text-6xl font-bold text-white drop-shadow-[0_2px_12px_rgba(30,58,138,0.25)] leading-[1.05]"
+                  className="text-h1 text-white drop-shadow-[0_2px_12px_rgba(30,58,138,0.25)]"
                 >
                   {headlines[index].first}<br />
                   <span className="text-white">{headlines[index].second}</span>
@@ -118,7 +118,7 @@ export function Hero() {
                     exit: { opacity: 0, y: 30, filter: "blur(10px)" }
                   }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
-                  className="mt-6 text-base sm:text-lg text-white/95 drop-shadow max-w-2xl mx-auto"
+                  className="mt-6 text-body-lg text-white/95 drop-shadow max-w-2xl mx-auto"
                 >
                   {headlines[index].text}
                 </motion.p>

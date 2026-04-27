@@ -13,13 +13,13 @@ export function AboutHero() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left: copy */}
           <div className="text-left">
-            <span className="inline-block text-xs font-bold tracking-[0.25em] text-white uppercase mb-6 bg-white/10 backdrop-blur-md border border-white/15 px-5 py-2 rounded-full">
+            <span className="text-overline text-white mb-6 bg-white/10 backdrop-blur-md border border-white/15 px-5 py-2 rounded-full inline-block">
               About HireUp Tech Careers
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05]">
+            <h1 className="text-h1 text-white">
               Connecting Talent with Opportunity Since 2021
             </h1>
-            <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-xl">
+            <p className="mt-6 text-body-lg text-white/70 max-w-xl">
               We're a leading job placement and recruitment company dedicated to empowering
               international students and connecting innovative companies with exceptional talent
               across the globe.

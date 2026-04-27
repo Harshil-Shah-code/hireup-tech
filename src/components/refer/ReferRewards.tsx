@@ -35,13 +35,13 @@ export function ReferRewards() {
     <section id="rewards" className="py-20 bg-sky-tint">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl mb-14">
-          <span className="inline-block text-xs font-bold tracking-[0.25em] text-orange uppercase mb-4">
+          <span className="text-overline text-orange mb-4 block">
             Referral Rewards
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
+          <h2 className="text-h2 text-navy">
             Turn Referrals Into a Side Income That Actually Grows
           </h2>
-          <p className="mt-4 text-navy-soft leading-relaxed">
+          <p className="mt-4 text-body text-navy-soft">
             Our tiered reward system ensures you're compensated fairly with your references. The
             more specialized plan the referred person chooses, the bigger your reward.
           </p>
@@ -58,11 +58,11 @@ export function ReferRewards() {
               }`}
             >
               {p.badge && (
-                <span className="absolute -top-3 left-8 inline-block bg-orange text-white text-[11px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
-                  {p.badge}
-                </span>
+                  <span className="absolute -top-3 left-8 inline-block bg-orange text-white text-overline px-4 py-1.5 rounded-full">
+                    {p.badge}
+                  </span>
               )}
-              <h3 className={`text-2xl font-extrabold ${p.recommended ? "text-white" : "text-navy"}`}>
+              <h3 className={`text-h3 ${p.recommended ? "text-white" : "text-navy"}`}>
                 {p.label}
               </h3>
               <p className={`text-sm mt-1 ${p.recommended ? "text-white/70" : "text-navy-soft"}`}>
@@ -75,24 +75,24 @@ export function ReferRewards() {
                 }`}
               >
                 <div>
-                  <div className={`text-3xl font-extrabold ${p.recommended ? "text-orange" : "text-navy"}`}>
+                  <div className={`text-h2 ${p.recommended ? "text-orange" : "text-navy"}`}>
                     {p.signup}
                   </div>
-                  <div className={`text-xs mt-1 ${p.recommended ? "text-white/70" : "text-navy-soft"}`}>
+                  <div className={`text-overline mt-1 ${p.recommended ? "text-white/70" : "text-navy-soft"}`}>
                     Signup Bonus
                   </div>
                 </div>
                 <div>
-                  <div className={`text-3xl font-extrabold ${p.recommended ? "text-orange" : "text-navy"}`}>
+                  <div className={`text-h2 ${p.recommended ? "text-orange" : "text-navy"}`}>
                     {p.placement}
                   </div>
-                  <div className={`text-xs mt-1 ${p.recommended ? "text-white/70" : "text-navy-soft"}`}>
+                  <div className={`text-overline mt-1 ${p.recommended ? "text-white/70" : "text-navy-soft"}`}>
                     Placement Bonus
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-extrabold text-orange">{p.total}</div>
-                  <div className={`text-xs mt-1 ${p.recommended ? "text-white/70" : "text-navy-soft"}`}>
+                  <div className="text-h2 text-orange">{p.total}</div>
+                  <div className={`text-overline mt-1 ${p.recommended ? "text-white/70" : "text-navy-soft"}`}>
                     Total Earning
                   </div>
                 </div>
@@ -100,7 +100,7 @@ export function ReferRewards() {
 
               <ul className="mt-6 space-y-3">
                 {p.perks.map((perk) => (
-                  <li key={perk} className="flex items-start gap-3 text-sm">
+                  <li key={perk} className="flex items-start gap-3 text-body-sm">
                     <span
                       className={`shrink-0 w-5 h-5 rounded-full grid place-items-center mt-0.5 ${
                         p.recommended ? "bg-orange text-white" : "bg-orange/10 text-orange"

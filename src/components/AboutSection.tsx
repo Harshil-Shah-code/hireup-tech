@@ -33,13 +33,13 @@ export function AboutSection() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
+            <span className="text-overline text-orange mb-3 block">
               Who We Are
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
+            <h2 className="text-h2 text-navy">
               So, What Is HireUp Tech Careers?
             </h2>
-            <p className="mt-5 text-navy-soft leading-relaxed">
+            <p className="mt-5 text-body text-navy-soft">
               HireUp Tech Careers is built on a simple idea: talented people shouldn't struggle to
               find the right opportunities, and companies shouldn't struggle to find the right talent.
               We work closely with professionals to understand their skills, ambitions, and goals,
@@ -76,8 +76,8 @@ export function AboutSection() {
               <div className="w-12 h-12 rounded-xl bg-orange-soft text-orange grid place-items-center mb-4">
                 <p.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-navy mb-1.5">{p.title}</h3>
-              <p className="text-sm text-navy-soft leading-relaxed">{p.text}</p>
+              <h3 className="text-h4 text-navy mb-1.5">{p.title}</h3>
+              <p className="text-body-sm text-navy-soft">{p.text}</p>
             </div>
           ))}
         </div>

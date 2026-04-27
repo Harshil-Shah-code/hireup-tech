@@ -12,13 +12,13 @@ export function ReferHero() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="text-left">
-            <span className="inline-block text-xs font-bold tracking-[0.25em] text-white uppercase mb-6 bg-white/10 backdrop-blur-md border border-white/15 px-5 py-2 rounded-full">
+            <span className="text-overline text-white mb-6 bg-white/10 backdrop-blur-md border border-white/15 px-5 py-2 rounded-full inline-block">
               Referral Rewards Program
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-[1.05]">
+            <h1 className="text-h1 text-white">
               Refer Friends, Earn Rewards <span className="text-orange">Everyone Wins!</span>
             </h1>
-            <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-xl">
+            <p className="mt-6 text-body-lg text-white/70 max-w-xl">
               Help your friends find their dream job and earn generous rewards for every successful
               placement. Share opportunities, grow your network, and get paid for making
               connections that matter.

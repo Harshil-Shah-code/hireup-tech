@@ -60,11 +60,11 @@ export function AboutStory() {
         {/* Header Reveal Section */}
         <div className="text-left mb-20">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-600/30 bg-blue-50/50 mb-8">
-            <span className="text-[10px] font-bold tracking-wider text-blue-700 uppercase">
+            <span className="text-overline text-blue-700">
               About HireUp Tech Careers
             </span>
           </div>
-          <h2 className="text-3xl sm:text-3xl lg:text-4xl font-bold leading-[1.2] tracking-tight max-w-5xl">
+          <h2 className="text-h3 max-w-5xl">
             <ScrollHighlightText text="Founded with the belief that job seekers and jobs shouldn't struggle to find each other, HireUp has grown into a trusted partner for thousands of professionals and hundreds of companies since 2021. Today, we help careers grow and businesses hire smarter through our expertise." />
           </h2>
         </div>
@@ -82,11 +82,11 @@ export function AboutStory() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-24">
           <div>
             <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-600/30 bg-blue-50/50 mb-6">
-              <span className="text-[10px] font-bold tracking-wider text-blue-700 uppercase">
+              <span className="text-overline text-blue-700">
                 About HireUp Tech Careers
               </span>
             </div>
-            <h3 className="text-4xl lg:text-5xl font-bold text-navy leading-tight">
+            <h3 className="text-h2 text-navy">
               We've helped over <br />
               <span className="text-navy">5400+ individuals &</span> <br />
               <span className="text-navy">360+ employers</span>
@@ -94,14 +94,14 @@ export function AboutStory() {
           </div>
 
           <div className="flex flex-col justify-center">
-            <p className="text-lg text-navy font-medium leading-relaxed mb-6">
+            <p className="text-body-lg text-navy mb-6">
               At HireUp, we know that behind every job search and every open role, there's a goal of
               building careers and building teams. What started as a mission to connect talented
               professionals with the right opportunities has grown into helping companies and
               candidates succeed through smarter hiring, global talent acquisition, and career
               support.
             </p>
-            <p className="text-navy-soft leading-relaxed mb-10">
+            <p className="text-body text-navy-soft mb-10">
               Over the years, HireUp has helped 5400+ of job seekers step into meaningful roles while
               supporting 360+ businesses in building strong, reliable teams. From job placement and staffing to talent acquisition and global hiring support, we work behind the scenes to make the connection between talent and opportunity.
             </p>

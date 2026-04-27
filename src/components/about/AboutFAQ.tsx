@@ -59,10 +59,10 @@ export function AboutFAQ() {
 
           {/* Left Section - Sticky Title & Description (30%) */}
           <div className="lg:col-span-4 lg:sticky lg:top-32 self-start">
-            <h2 className="text-3xl sm:text-5xl lg:text-5xl font-black text-[#0B1B35] leading-[1.05] tracking-tight mb-8 lg:mb-10">
+            <h2 className="text-h2 text-[#0B1B35] mb-8 lg:mb-10">
               Frequently{"\n"}asked{"\n"}questions
             </h2>
-            <p className="text-[#435366] text-md lg:text-lg max-w-[360px] opacity-70">
+            <p className="text-body-lg text-[#435366] max-w-[360px] opacity-70">
               Everything you need to know about our job placement services are covered in these FAQ's.
               If you're looking for something else just contact us.
             </p>
@@ -79,7 +79,7 @@ export function AboutFAQ() {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full px-8 py-7 lg:py-8 flex items-center justify-between gap-6 text-left focus:outline-none"
                 >
-                  <span className="text-base lg:text-[1.125rem] font-bold text-[#0B1B35] leading-snug">
+                  <span className="text-body-lg font-bold text-[#0B1B35]">
                     {faq.question}
                   </span>
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center transition-all duration-300 group-hover:scale-105 border border-transparent">
@@ -100,7 +100,7 @@ export function AboutFAQ() {
                       }`}
                   >
                     <div className="h-px w-full bg-[#0B1B35]/5 mb-6" />
-                    <p className="text-[#435366] leading-relaxed text-sm lg:text-[1rem] max-w-2xl opacity-90">
+                    <p className="text-body text-[#435366] max-w-2xl opacity-90">
                       {faq.answer}
                     </p>
                   </div>

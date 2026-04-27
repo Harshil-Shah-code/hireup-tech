@@ -84,13 +84,13 @@ export function AboutTeam() {
     <section className="py-24 bg-accent/40 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
+          <span className="text-overline text-orange mb-3 block">
             Our Team
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
+          <h2 className="text-h2 text-navy">
             Meet the People Behind HireUp's Success
           </h2>
-          <p className="mt-5 text-navy-soft leading-relaxed">
+          <p className="mt-5 text-body text-navy-soft">
             Our diverse team of experts brings together decades of experience in recruitment,
             technology, operations, and international student support to deliver exceptional
             results.
@@ -128,8 +128,8 @@ export function AboutTeam() {
                 />
               </div>
               <div className="p-5">
-                <h4 className="font-bold text-navy text-[17px]">{m.name}</h4>
-                <p className="text-sm text-navy-soft mt-1">{m.role}</p>
+                <h4 className="text-h4 text-navy">{m.name}</h4>
+                <p className="text-body-sm text-navy-soft mt-1">{m.role}</p>
               </div>
             </div>
           ))}

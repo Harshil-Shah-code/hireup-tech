@@ -53,12 +53,12 @@ export function AboutJourney() {
     <section className="py-24 bg-white">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
+          <h2 className="text-h2 text-navy">
             Our Journey of
             <br />
             Building Trust in Recruitment
           </h2>
-          <p className="mt-5 text-navy-soft leading-relaxed">
+          <p className="mt-5 text-body text-navy-soft">
             From our foundation to becoming a trusted workforce partner — here's how HireUp has
             grown over the years.
           </p>
@@ -118,18 +118,18 @@ export function AboutJourney() {
 
           <div className="lg:col-span-1 bg-[#F5FAFF] rounded-2xl p-6 sm:p-8 border border-blue-100 flex flex-col h-auto lg:h-[520px]">
             <div className="mb-6 flex-shrink-0">
-              <span className="inline-flex items-center rounded-full bg-white text-navy text-[10px] font-bold tracking-widest px-4 py-1.5 border border-blue-100 shadow-sm">
+              <span className="text-overline text-navy">
                 JOURNEY · {item.year}
               </span>
             </div>
 
             <div className="flex-grow flex flex-col min-h-0">
-              <h3 className="text-2xl xl:text-3xl font-bold text-[#0A1D37] leading-[1.1] mb-5 flex-shrink-0">
+              <h3 className="text-h3 text-[#0A1D37] mb-5">
                 {item.title}
               </h3>
 
               <div className="flex-grow min-h-0">
-                <div className="text-[#435366] leading-relaxed text-[15px] line-clamp-[10] xl:line-clamp-[12]">
+                <div className="text-body-sm text-[#435366]">
                   {item.body.split("\n\n").map((p, i) => (
                     <p key={i} className="mb-4 last:mb-0">{p}</p>
                   ))}

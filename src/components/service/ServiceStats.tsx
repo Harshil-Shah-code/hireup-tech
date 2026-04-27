@@ -10,13 +10,13 @@ export function ServiceStats({ cfg }: { cfg: ServiceConfig }) {
               key={s.label}
               className="rounded-3xl bg-gradient-to-b from-accent to-white border border-border p-7 hover:shadow-card transition-shadow"
             >
-              <div className="text-4xl lg:text-5xl font-extrabold text-navy tracking-tight">
+              <div className="text-h2 text-navy">
                 {s.value}
               </div>
-              <div className="mt-2 text-sm font-bold text-orange uppercase tracking-wider">
+              <div className="text-overline text-orange mt-2">
                 {s.label}
               </div>
-              <p className="mt-3 text-sm text-navy-soft leading-relaxed">{s.text}</p>
+              <p className="mt-3 text-body-sm text-navy-soft">{s.text}</p>
             </div>
           ))}
         </div>

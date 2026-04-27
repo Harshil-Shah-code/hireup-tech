@@ -34,13 +34,13 @@ export function AboutCommitment() {
     <section className="py-24 bg-[oklch(0.96_0.015_85)]">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
+          <span className="text-overline text-orange mb-3 block">
             Our Values
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
+          <h2 className="text-h2 text-navy">
             Our Commitment to Individuals and Companies
           </h2>
-          <p className="mt-5 text-navy-soft leading-relaxed">
+          <p className="mt-5 text-body text-navy-soft">
             At HireUp, we are committed to delivering ethical recruitment, meaningful career
             outcomes, and reliable workforce solutions built on trust and transparency.
           </p>
@@ -57,10 +57,10 @@ export function AboutCommitment() {
                 <it.icon className="w-5 h-5" strokeWidth={2} />
               </div>
 
-              <h3 className="text-xl font-bold mb-3 leading-snug text-navy transition-colors duration-300 group-hover:text-white">
+              <h3 className="text-h3 mb-3 text-navy group-hover:text-white transition-colors duration-300">
                 {it.title}
               </h3>
-              <p className="text-sm leading-relaxed text-navy-soft transition-colors duration-300 group-hover:text-white/85">
+              <p className="text-body-sm text-navy-soft group-hover:text-white/85 transition-colors duration-300">
                 {it.text}
               </p>
             </article>

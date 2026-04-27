@@ -5,6 +5,7 @@ import { LogoMarquee } from "@/components/LogoMarquee";
 import { AboutSection } from "@/components/AboutSection";
 import { WhyChoose } from "@/components/WhyChoose";
 import { Services } from "@/components/Services";
+import { Process } from "@/components/Process";
 import { Stats } from "@/components/Stats";
 import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
@@ -39,6 +40,7 @@ function Index() {
         <AboutSection />
         <WhyChoose />
         <Services />
+        <Process />
         <Stats />
         <Testimonials />
         <Contact />

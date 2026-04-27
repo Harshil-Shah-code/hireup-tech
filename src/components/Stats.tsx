@@ -23,10 +23,10 @@ export function Stats() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Header */}
         <div className="text-center mb-10 fade-up">
-          <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-navy mb-6">
+          <h2 className="text-h2 text-navy mb-6">
             Success Since <br className="md:hidden" /> Our Establishment
           </h2>
-          <p className="text-navy-soft max-w-3xl mx-auto text-sm lg:text-base leading-relaxed opacity-70">
+          <p className="text-body text-navy-soft max-w-3xl mx-auto opacity-70">
             HireUp Careers has facilitated the successful placement of 1750+ candidates,
             underscoring our proficiency in generating meaningful employment opportunities for individuals.
           </p>
@@ -43,7 +43,7 @@ export function Stats() {
                 <div key={idx} className="flex flex-col items-center group relative pt-4">
                   {/* Year Tag - Positioned to overlap */}
                   <div className={`
-                    absolute top-0 px-4 py-1.5 rounded-full text-[10px] font-bold z-20 shadow-sm
+                    absolute top-0 px-4 py-1.5 rounded-full text-overline z-20 shadow-sm
                     ${item.highlight ? 'bg-white text-black' : 'bg-primary text-white'}
                   `}>
                     {item.year}
@@ -56,10 +56,10 @@ export function Stats() {
                       ? 'bg-primary text-white shadow-lg'
                       : 'bg-white text-black shadow-sm group-hover:shadow-md'}
                   `}>
-                    <div className="text-2xl lg:text-3xl font-bold mb-1 mt-2">
+                    <div className="text-h3 mb-1 mt-2">
                       {item.value}
                     </div>
-                    <div className={`text-[9px] lg:text-[10px] font-medium leading-tight ${item.highlight ? 'text-white/90' : 'text-gray-400'}`}>
+                    <div className={`text-overline leading-tight ${item.highlight ? 'text-white/90' : 'text-gray-400'}`}>
                       {item.label}
                     </div>
                   </div>
@@ -73,10 +73,10 @@ export function Stats() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 lg:gap-2">
           {bottomStats.map((stat, idx) => (
             <div key={idx} className="text-center group fade-up" style={{ animationDelay: `${idx * 100}ms` }}>
-              <div className="text-4xl lg:text-5xl font-bold text-black mb-1">
+              <div className="text-h2 text-black mb-1">
                 {stat.value}
               </div>
-              <div className="text-[10px] lg:text-xs font-medium text-gray-400">
+              <div className="text-overline text-gray-400">
                 {stat.label}
               </div>
             </div>

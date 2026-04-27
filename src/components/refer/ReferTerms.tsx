@@ -24,10 +24,10 @@ export function ReferTerms() {
     <section className="py-20 bg-white">
       <div className="mx-auto max-w-5xl px-5 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-sky-tint text-navy px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+          <div className="inline-flex items-center gap-2 bg-sky-tint text-navy px-4 py-2 rounded-full text-overline mb-4">
             <FileText className="w-3.5 h-3.5" /> Terms & Conditions
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy leading-tight">
+          <h2 className="text-h2 text-navy">
             Refer & Earn Programme
           </h2>
         </div>
@@ -38,8 +38,8 @@ export function ReferTerms() {
               key={t.title}
               className="rounded-2xl border border-border bg-sky-tint/40 p-6 hover:bg-sky-tint transition"
             >
-              <h3 className="font-bold text-navy mb-2">{t.title}</h3>
-              <p className="text-sm text-navy-soft leading-relaxed">{t.text}</p>
+              <h3 className="text-h4 text-navy mb-2">{t.title}</h3>
+              <p className="text-body-sm text-navy-soft">{t.text}</p>
             </div>
           ))}
         </div>

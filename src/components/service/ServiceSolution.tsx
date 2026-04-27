@@ -7,10 +7,10 @@ export function ServiceSolution({ cfg }: { cfg: ServiceConfig }) {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy leading-tight">
+            <h2 className="text-h2 text-navy">
               {cfg.solution?.heading}
             </h2>
-            <p className="mt-5 text-navy-soft leading-relaxed">
+            <p className="mt-5 text-body text-navy-soft">
               {cfg.solution?.description}
             </p>
             {cfg.solution?.cta && (
@@ -32,8 +32,8 @@ export function ServiceSolution({ cfg }: { cfg: ServiceConfig }) {
                 <div className="w-12 h-12 rounded-xl bg-orange/10 text-orange grid place-items-center group-hover:bg-orange group-hover:text-white transition-colors">
                   <item.icon className="w-6 h-6" />
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-navy">{item.title}</h3>
-                <p className="mt-2 text-sm text-navy-soft leading-relaxed">{item.text}</p>
+                <h3 className="mt-4 text-h4 text-navy">{item.title}</h3>
+                <p className="mt-2 text-body-sm text-navy-soft">{item.text}</p>
               </div>
             ))}
           </div>

@@ -24,10 +24,10 @@ export function WhyChoose() {
     <section className="py-24 bg-white">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center mb-14 max-w-3xl mx-auto">
-          <span className="inline-block text-xs font-bold tracking-[0.2em] text-orange uppercase mb-3">
+          <span className="text-overline text-orange mb-3 block">
             Why Choose Us
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
+          <h2 className="text-h2 text-navy">
             Why Job Seekers & Employers Choose HireUp
           </h2>
         </div>
@@ -52,7 +52,7 @@ function Column({
   return (
     <div className={`rounded-3xl p-7 sm:p-9 ${isOrange ? "bg-gradient-to-br from-orange-soft to-white" : "bg-gradient-to-br from-accent to-white"} shadow-card border border-border`}>
       <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 ${isOrange ? "bg-orange text-white" : "bg-navy text-white"}`}>
-        <span className="text-xs font-bold tracking-wider uppercase">{title}</span>
+        <span className="text-overline">{title}</span>
       </div>
       <div className="space-y-4">
         {items.map((it) => (
@@ -64,8 +64,8 @@ function Column({
               <it.icon className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-navy text-[15px] mb-0.5">{it.title}</h4>
-              <p className="text-sm text-navy-soft leading-snug">{it.text}</p>
+              <h4 className="text-h4 text-navy mb-0.5">{it.title}</h4>
+              <p className="text-body-sm text-navy-soft">{it.text}</p>
             </div>
           </div>
         ))}
