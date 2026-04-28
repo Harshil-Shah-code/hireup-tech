@@ -4,8 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import cloud1 from "@/assets/cloud-1.avif";
 import cloud2 from "@/assets/cloud-2.avif";
 import jobSeekers from "@/assets/job-seekers.jpg";
-// import employers from "@/assets/employers.jpg";
+import employers from "@/assets/employers.jpg";
 import { ArrowRight, Phone, Star } from "lucide-react";
+import { StoryModal, type Story } from "./StoryModal";
 
 const headlines = [
   {
@@ -20,9 +21,50 @@ const headlines = [
   },
 ];
 
+const stories: Story[] = [
+  {
+    id: "salman",
+    name: "Salman Shaikh",
+    role: "Financial Analyst",
+    company: "Subway",
+    rating: 4.8,
+    location: "Miami",
+    title: "Became Financial Analyst in Subway, Miami",
+    bio: "Salman was putting in efforts but wasn't getting the kind of response he expected. The challenge wasn't just about applying it was about getting noticed in a competitive market. Despite having the skills, the lack of the right positioning made it difficult to convert opportunities, which started creating frustration and doubt.",
+    situation: "With Salman, the focus was on positioning him correctly in the market and keeping the momentum strong. The team stayed closely connected, ensuring he was prepared, informed, and supported at every stage. Constant availability and timely guidance helped him perform better in each opportunity.",
+    approach: "With Salman, the focus was on positioning him correctly in the market and keeping the momentum strong. The team stayed closely connected, ensuring he was prepared, informed, and supported at every stage. Constant availability and timely guidance helped him perform better in each opportunity.",
+    image: jobSeekers,
+  },
+  {
+    id: "aakash",
+    name: "Aakash Gupta",
+    role: "Software Engineer",
+    company: "Tech Solutions",
+    rating: 4.9,
+    location: "Virginia",
+    title: "Secured STEM OPT and High-Growth Role",
+    bio: "Aakash completed his studies in Virginia under an F1 visa and secured his STEM OPT — extending his professional runway in the United States. He was looking for a role that would not only sponsor his H1B but also provide a challenging environment to grow as a developer.",
+    situation: "The primary challenge was finding a company that understood the H1B process and was willing to invest in long-term talent. Aakash needed a clear roadmap for his transition from OPT to STEM OPT and eventually H1B.",
+    approach: "We connected Aakash with several tech firms in the Virginia area that have a strong track record of sponsoring visas. We also provided interview coaching specifically focused on articulating his value proposition as an international graduate.",
+    image: employers,
+  }
+];
+
 export function Hero() {
   const [index, setIndex] = useState(0);
   const { openCalendly } = useCalendly();
+  
+  // Modal State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedStory, setSelectedStory] = useState<Story | null>(null);
+
+  const openStory = (storyId: string) => {
+    const story = stories.find(s => s.id === storyId);
+    if (story) {
+      setSelectedStory(story);
+      setIsModalOpen(true);
+    }
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -53,35 +95,26 @@ export function Hero() {
           alt=""
           className="absolute bottom-0 -right-20 w-[24rem] md:w-[35rem] lg:w-[50rem] opacity-80 float-slow"
         />
-        {/* Large cloud bottom left */}
-        {/* <img 
-          src={cloud1} 
-          alt="" 
-          className="absolute bottom-[2%] -left-20 w-[26rem] md:w-[40rem] lg:w-[55rem] opacity-50 float-slower"
-        /> */}
       </div>
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
-        {/* Floating left badge: Job Seekers */}
-        {/* <div className="hidden md:block absolute left-2 lg:left-8 top-8 lg:top-16 float-slow">
-          <BadgeCard image={jobSeekers} label="💼 Job Seekers" />
-        </div> */}
-
         {/* Floating right badge: testimonial */}
         <div className="hidden md:block absolute right-2 lg:right-[-20px] top-4 lg:top-10 float-slower max-w-[300px]">
           <div className="glass-card rounded-2xl p-3.5 shadow-card text-white">
             <div className="flex items-start gap-3">
               <img
-                src={jobSeekers}
+                src={stories[1].image}
                 alt=""
                 className="w-10 h-10 rounded-full object-cover border-2 border-white/60"
               />
               <div className="flex-1">
-                <p className="text-[11px] leading-snug text-white drop-shadow">
-                  Aakash completed his studies in Virginia under an F1 visa and secured his
-                  STEM OPT — extending his professional runway in the United States…
+                <p className="text-[11px] leading-snug text-white drop-shadow line-clamp-3">
+                  {stories[1].bio}
                 </p>
-                <button className="mt-2 text-[10px] font-semibold px-3 py-1 rounded-full border border-white/60 text-white hover:bg-white hover:text-navy transition">
+                <button 
+                  onClick={() => openStory("aakash")}
+                  className="mt-2 text-[10px] font-semibold px-3 py-1 rounded-full border border-white/60 text-white hover:bg-white hover:text-navy transition cursor-pointer"
+                >
                   Read Full Story
                 </button>
               </div>
@@ -150,24 +183,23 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Floating bottom-right: Employers */}
-        {/* <div className="hidden md:block absolute right-4 lg:right-16 bottom-0 lg:-bottom-4 float-slow">
-          <BadgeCard image={employers} label="👨🏼‍💻 Employers" />
-        </div> */}
+        {/* Floating bottom-left Badge */}
         <div className="hidden md:block absolute left-2 lg:left-[-20px] bottom-4 lg:bottom-10 float-slower max-w-[300px]">
           <div className="glass-card rounded-2xl p-3.5 shadow-card text-white">
             <div className="flex items-start gap-3">
               <img
-                src={jobSeekers}
+                src={stories[0].image}
                 alt=""
                 className="w-10 h-10 rounded-full object-cover border-2 border-white/60"
               />
               <div className="flex-1">
-                <p className="text-[11px] leading-snug text-white drop-shadow">
-                  Aakash completed his studies in Virginia under an F1 visa and secured his
-                  STEM OPT — extending his professional runway in the United States…
+                <p className="text-[11px] leading-snug text-white drop-shadow line-clamp-3">
+                  {stories[0].bio}
                 </p>
-                <button className="mt-2 text-[10px] font-semibold px-3 py-1 rounded-full border border-white/60 text-white hover:bg-white hover:text-navy transition">
+                <button 
+                  onClick={() => openStory("salman")}
+                  className="mt-2 text-[10px] font-semibold px-3 py-1 rounded-full border border-white/60 text-white hover:bg-white hover:text-navy transition cursor-pointer"
+                >
                   Read Full Story
                 </button>
               </div>
@@ -175,6 +207,12 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      <StoryModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        story={selectedStory} 
+      />
     </section>
   );
 }
