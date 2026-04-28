@@ -1,6 +1,11 @@
 import { ArrowRight, Phone } from "lucide-react";
 
-export function ServiceCTA() {
+export function ServiceCTA({ onCtaClick }: { onCtaClick: () => void }) {
+  const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    onCtaClick();
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-navy via-[oklch(0.22_0.13_265)] to-navy text-white relative overflow-hidden">
       <div aria-hidden className="absolute -top-20 right-1/4 w-[400px] h-[400px] rounded-full bg-orange/15 blur-3xl" />
@@ -14,6 +19,7 @@ export function ServiceCTA() {
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a
             href="/#contact"
+            onClick={handleCtaClick}
             className="group inline-flex items-center gap-2 rounded-full bg-orange text-white pl-6 pr-2 py-2 text-sm font-semibold hover:bg-white hover:text-navy transition-colors"
           >
             Start your journey

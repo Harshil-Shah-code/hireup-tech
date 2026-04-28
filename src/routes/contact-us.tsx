@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { AboutFAQ } from "@/components/about/AboutFAQ";
 import { useCalendly } from "@/components/CalendlyProvider";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact-us")({
   head: () => ({
@@ -26,18 +27,36 @@ export const Route = createFileRoute("/contact-us")({
 
 function ContactUsPage() {
   const { openCalendly } = useCalendly();
-  const [formState, setFormState] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", formState);
-    alert("Thank you! Your message has been sent.");
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", import.meta.env.VITE_ACCESS_KEY || "");
+    formData.append("subject", "New Inquiry from Contact Us Page - HireUp");
+    formData.append("from_name", "HireUp Website");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Message sent successfully! We'll get back to you soon.");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        toast.error(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Failed to connect to the mail server. Please check your internet.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -70,7 +89,7 @@ function ContactUsPage() {
                 </p>
 
                 <div className="mt-12 flex flex-wrap gap-5">
-                  <button 
+                  <button
                     onClick={() => openCalendly()}
                     className="group inline-flex items-center gap-3 rounded-full bg-white text-navy px-9 py-5 text-sm font-bold transition-all hover:bg-orange hover:text-white hover:scale-105 active:scale-95 shadow-xl shadow-white/5"
                   >
@@ -99,61 +118,45 @@ function ContactUsPage() {
                   <form onSubmit={handleSubmit} className="mt-12 space-y-6">
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-[13px] font-bold text-navy/40 uppercase tracking-widest pl-1">Last name</label>
+                        <label className="text-[13px] font-bold text-navy/40 uppercase tracking-widest pl-1">Name</label>
                         <input
+                          name="name"
                           type="text"
                           required
                           className="w-full rounded-2xl border-none bg-accent/90 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/40 focus:bg-accent/90 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
-                          placeholder="Your last name"
-                          value={formState.lastName}
-                          onChange={(e) => setFormState({ ...formState, lastName: e.target.value })}
+                          placeholder="Your name"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[13px] font-bold text-navy/40 uppercase tracking-widest pl-1">First name</label>
+                        <label className="text-[13px] font-bold text-navy/40 uppercase tracking-widest pl-1">Email address</label>
                         <input
-                          type="text"
+                          name="email"
+                          type="email"
                           required
                           className="w-full rounded-2xl border-none bg-accent/90 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/40 focus:bg-accent/90 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
-                          placeholder="Your first name"
-                          value={formState.firstName}
-                          onChange={(e) => setFormState({ ...formState, firstName: e.target.value })}
+                          placeholder="example@email.com"
                         />
                       </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-[13px] font-bold text-navy/40 uppercase tracking-widest pl-1">Email address</label>
-                      <input
-                        type="email"
-                        required
-                        className="w-full rounded-2xl border-none bg-accent/90 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/40 focus:bg-accent/90 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
-                        placeholder="example@email.com"
-                        value={formState.email}
-                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      />
                     </div>
 
                     <div className="space-y-2">
                       <label className="text-[13px] font-bold text-navy/40 uppercase tracking-widest pl-1">Phone number</label>
                       <input
+                        name="phone"
                         type="tel"
                         className="w-full rounded-2xl border-none bg-accent/90 px-6 py-4 text-sm font-semibold text-navy placeholder:text-navy/40 focus:bg-accent/90 focus:ring-2 focus:ring-orange/20 transition-all outline-none"
-                        placeholder="+1 (555) 000-0000"
-                        value={formState.phone}
-                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                        placeholder="Phone Number"
                       />
                     </div>
 
                     <div className="space-y-2">
                       <label className="text-[13px] font-bold text-navy/40 uppercase tracking-widest pl-1">Enter your message...</label>
                       <textarea
+                        name="message"
                         rows={4}
                         required
                         className="w-full rounded-2xl border-none bg-accent/90 px-6 py-5 text-sm font-semibold text-navy placeholder:text-navy/40 focus:bg-accent/90 focus:ring-2 focus:ring-orange/20 transition-all outline-none resize-none"
                         placeholder="How can we help you?"
-                        value={formState.message}
-                        onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       />
                     </div>
 
@@ -163,9 +166,10 @@ function ContactUsPage() {
                       </p>
                       <button
                         type="submit"
-                        className="group w-full sm:w-auto rounded-2xl bg-navy px-10 py-5 text-sm font-bold text-white shadow-xl shadow-navy/20 transition-all hover:bg-orange hover:shadow-orange/30 hover:-translate-y-1 active:translate-y-0"
+                        disabled={isSubmitting}
+                        className="group w-full sm:w-auto rounded-2xl bg-navy px-10 py-5 text-sm font-bold text-white shadow-xl shadow-navy/20 transition-all hover:bg-orange hover:shadow-orange/30 hover:-translate-y-1 active:translate-y-0 disabled:opacity-50"
                       >
-                        Submit
+                        {isSubmitting ? "Sending..." : "Submit"}
                       </button>
                     </div>
                   </form>

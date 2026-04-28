@@ -59,7 +59,7 @@ export function SiteFooter() {
               Our Services
             </h4>
             <ul className="space-y-4 text-body-sm">
-              {["Job Placement", "Recruitment & Staffing", "Background Verification", "Talent Acquisition", "Payroll & Teams", "IT Training"].map((item) => (
+              {["Job Placement", "Recruitment & Staffing", "Background Verification", "Talent Acquisition", "IT Training"].map((item) => (
                 <li key={item}>
                   <a href="#" className="text-white/60 hover:text-white transition-colors">{item}</a>
                 </li>

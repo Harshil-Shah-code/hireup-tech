@@ -18,7 +18,7 @@ const nav = [
   { label: "About Us", to: "/about" },
   { label: "Refer & Earn", to: "/refer-earn" },
   { label: "Career", to: "/#career" },
-  { label: "Contact", to: "/#contact" },
+  { label: "Contact", to: "/contact-us" },
 ];
 
 export function SiteHeader() {
@@ -36,11 +36,11 @@ export function SiteHeader() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
       {/* Decorative cloud blobs behind the pill */}
-      <div aria-hidden className="absolute inset-x-0 top-0 h-32 overflow-hidden">
+      {/* <div aria-hidden className="absolute inset-x-0 top-0 h-32 overflow-hidden">
         <div className="absolute -top-10 left-[8%] w-72 h-32 rounded-full bg-white/40 blur-2xl float-slow" />
         <div className="absolute -top-6 left-[38%] w-96 h-28 rounded-full bg-white/35 blur-2xl float-slower" />
         <div className="absolute -top-12 right-[10%] w-80 h-32 rounded-full bg-white/40 blur-2xl float-slow" />
-      </div>
+      </div> */}
 
       <div
         className="pointer-events-auto mx-auto max-w-7xl px-4 sm:px-6 mt-4"

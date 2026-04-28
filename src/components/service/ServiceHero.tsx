@@ -1,7 +1,13 @@
 import type { ServiceConfig } from "./types";
 import { ArrowRight, PlayCircle } from "lucide-react";
+import { useState } from "react";
 
-export function ServiceHero({ cfg }: { cfg: ServiceConfig }) {
+export function ServiceHero({ cfg, onCtaClick }: { cfg: ServiceConfig; onCtaClick: () => void }) {
+  const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    onCtaClick();
+  };
+
   return (
     <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 bg-gradient-to-br from-navy via-[oklch(0.22_0.13_265)] to-navy text-white overflow-hidden">
       <div aria-hidden className="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full bg-orange/10 blur-3xl" />
@@ -21,6 +27,7 @@ export function ServiceHero({ cfg }: { cfg: ServiceConfig }) {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={cfg.primaryCta.href}
+              onClick={handleCtaClick}
               className="group inline-flex items-center gap-2 rounded-full bg-white text-navy pl-6 pr-2 py-2 text-sm font-semibold hover:bg-orange hover:text-white transition-colors"
             >
               {cfg.primaryCta.label}
@@ -62,6 +69,7 @@ export function ServiceHero({ cfg }: { cfg: ServiceConfig }) {
           )}
         </div>
       </div>
+
     </section>
   );
 }
