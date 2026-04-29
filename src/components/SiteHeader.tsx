@@ -4,6 +4,7 @@ import {
   Menu, X, Phone, ChevronDown, BadgeCheck, Users, UserCheck,
   ShieldCheck, GraduationCap,
 } from "lucide-react";
+import Logo02 from "@/assets/Logo 02.svg";
 
 const services = [
   { icon: BadgeCheck, title: "Job Placement", text: "Your partner in career success across the USA", to: "/services/job-placement" },
@@ -64,13 +65,7 @@ export function SiteHeader() {
           />
 
           <Link to="/" className="relative flex items-center gap-2 group">
-            <div className="flex items-baseline">
-              <span className="text-2xl font-extrabold text-orange tracking-tight">Hire</span>
-              <span className="text-2xl font-extrabold text-white tracking-tight">Up</span>
-            </div>
-            <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-white/80 hidden sm:block">
-              Tech Careers
-            </span>
+            <img src={Logo02} alt="HireUp" className="h-20 w-auto" />
           </Link>
 
           <nav className="relative hidden lg:flex items-center gap-0.5">
@@ -141,7 +136,7 @@ export function SiteHeader() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="pointer-events-auto lg:hidden mt-3 rounded-3xl border border-white/50 bg-white/95 backdrop-blur-2xl overflow-hidden">
+          <div className="pointer-events-auto lg:hidden mt-3 rounded-3xl border border-secondary/50 bg-white/95 backdrop-blur-2xl overflow-hidden">
             <div className="px-4 py-4 flex flex-col gap-1">
               {nav.map((item) => (
                 <a

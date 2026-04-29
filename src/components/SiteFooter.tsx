@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="relative rounded-[2.5rem] bg-gradient-to-r from-[#2D34CC] to-[#7137D2] flex flex-col lg:flex-row items-stretch lg:items-end overflow-hidden lg:overflow-visible">
 
           {/* Content Wrap */}
-          <div className="flex-1 p-8 sm:p-12 lg:p-16 lg:pb-20 relative z-10">
+          <div className="flex-1 p-8 sm:p-12 lg:p-16 pb-0 lg:pb-20 relative z-10">
             <h2 className="text-h2 text-white mb-2 lg:mb-6">
               Got a Job Hunt Stress or <br className="hidden sm:block" />
               Hiring Problem? We Love Those
@@ -41,7 +41,7 @@ export function SiteFooter() {
           </div>
 
           {/* Image Wrap */}
-          <div className="relative flex-shrink-0 w-full lg:w-[45%] h-[300px] lg:h-[480px] lg:mt-0 self-end">
+          <div className="relative flex-shrink-0 w-full lg:w-[45%] h-[200px] sm:h-[300px] lg:h-[480px] lg:mt-0 self-end">
             <img
               src={footerCtaWoman}
               alt="Social professional woman"
@@ -51,7 +51,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 pb-12 pt-32 sm:pt-40 lg:pt-48">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8 pb-12 pt-45 sm:pt-40 lg:pt-48">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Services Column */}
           <div>

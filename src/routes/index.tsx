@@ -2,11 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Hero } from "@/components/Hero";
 import { LogoMarquee } from "@/components/LogoMarquee";
-import { AboutSection } from "@/components/AboutSection";
+import { MissionVision } from "@/components/MissionVision";
 import { WhyChoose } from "@/components/WhyChoose";
 import { Services } from "@/components/Services";
 import { Process } from "@/components/Process";
 import { Stats } from "@/components/Stats";
+import { Certifications } from "@/components/Certifications";
 import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -37,15 +38,16 @@ function Index() {
       <main>
         <Hero />
         <LogoMarquee />
-        <AboutSection />
+        <MissionVision />
         <WhyChoose />
         <Services />
         <Process />
         <Stats />
+        <Certifications />
         <Testimonials />
         <Contact />
       </main>
-      <div className="pt-60 lg:pt-80 w-full"></div>
+      <div className="pt-80 md:pt-60 lg:pt-80 w-full"></div>
       <SiteFooter />
     </div>
   );

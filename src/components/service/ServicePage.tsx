@@ -35,7 +35,7 @@ export function ServicePage({ cfg }: { cfg: ServiceConfig }) {
         <ServiceFAQ cfg={cfg} />
         {/* <ServiceCTA onCtaClick={openModal} /> */}
       </main>
-      <div className="pt-60 lg:pt-80 w-full"></div>
+      <div className="pt-80 md:pt-60 lg:pt-80 w-full"></div>
       <SiteFooter />
 
       {cfg.slug === "/services/job-placement" && (

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ArrowRight } from "lucide-react";
@@ -28,6 +28,7 @@ export const Route = createFileRoute("/contact-us")({
 function ContactUsPage() {
   const { openCalendly } = useCalendly();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -96,9 +97,9 @@ function ContactUsPage() {
                     Connect Now
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </button>
-                  <button className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 px-9 py-5 text-sm font-bold text-white transition-all hover:bg-white hover:text-navy hover:border-white">
+                  <Link to="/services/job-placement" className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 px-9 py-5 text-sm font-bold text-white transition-all hover:bg-white hover:text-navy hover:border-white">
                     Explore Services
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -180,7 +181,7 @@ function ContactUsPage() {
         </section>
         <AboutFAQ />
       </main>
-      <div className="pt-60 lg:pt-80 w-full"></div>
+      <div className="pt-80 md:pt-60 lg:pt-80 w-full"></div>
       <SiteFooter />
     </div>
   );

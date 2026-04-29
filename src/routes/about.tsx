@@ -42,7 +42,7 @@ function AboutPage() {
         <AboutCTA />
         <AboutFAQ />
       </main>
-      <div className="pt-60 lg:pt-80 w-full"></div>
+      <div className="pt-80 md:pt-60 lg:pt-80 w-full"></div>
       <SiteFooter />
     </div>
   );

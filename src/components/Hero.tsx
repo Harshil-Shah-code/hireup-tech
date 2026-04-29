@@ -99,7 +99,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         {/* Floating right badge: testimonial */}
-        <div className="hidden md:block absolute right-2 lg:right-[-20px] top-4 lg:top-10 float-slower max-w-[300px]">
+        <div className="absolute right-2 lg:right-[-20px] top-4 lg:top-10 z-30 float-slower max-w-[280px] sm:max-w-[300px]">
           <div className="glass-card rounded-2xl p-3.5 shadow-card text-white">
             <div className="flex items-start gap-3">
               <img
@@ -184,7 +184,7 @@ export function Hero() {
         </div>
 
         {/* Floating bottom-left Badge */}
-        <div className="hidden md:block absolute left-2 lg:left-[-20px] bottom-4 lg:bottom-10 float-slower max-w-[300px]">
+        <div className="absolute left-2 lg:left-[-20px] bottom-4 lg:bottom-10 z-30 float-slower max-w-[280px] sm:max-w-[300px]">
           <div className="glass-card rounded-2xl p-3.5 shadow-card text-white">
             <div className="flex items-start gap-3">
               <img
