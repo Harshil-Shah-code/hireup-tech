@@ -5,6 +5,7 @@ import {
   ShieldCheck, GraduationCap,
 } from "lucide-react";
 import Logo02 from "@/assets/Logo 02.svg";
+import { useCalendly } from "./CalendlyProvider";
 
 const services = [
   { icon: BadgeCheck, title: "Job Placement", text: "Your partner in career success across the USA", to: "/services/job-placement" },
@@ -26,6 +27,7 @@ export function SiteHeader() {
   const [, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const { openCalendly } = useCalendly();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -87,15 +89,15 @@ export function SiteHeader() {
           </nav>
 
           <div className="relative hidden lg:flex items-center">
-            <a
-              href="#contact"
+            <button
+              onClick={() => openCalendly()}
               className="group inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur pl-5 pr-2 py-2 text-sm font-semibold text-navy hover:bg-orange hover:text-white transition-all"
             >
               Book Free Call
               <span className="grid place-items-center w-9 h-9 rounded-full bg-orange text-white group-hover:bg-white group-hover:text-orange transition-colors">
                 <Phone className="w-4 h-4" />
               </span>
-            </a>
+            </button>
           </div>
 
           <button

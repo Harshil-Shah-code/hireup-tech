@@ -52,8 +52,8 @@ export function Contact() {
 
             <div className="mt-8 space-y-4">
               <ContactRow icon={MapPin} label="411 University St, Seattle, USA" />
-              <ContactRow icon={Mail} label="hello@hireuptechcareers.com" />
-              <ContactRow icon={Phone} label="+1 (484) 850-7957" />
+              <ContactRow icon={Mail} label="Info@hireuptechcareers.com" />
+              <ContactRow icon={Phone} label="+1(307) 292 9723" />
             </div>
           </div>
 
