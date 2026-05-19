@@ -1,7 +1,5 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
 import { CalendlyProvider } from "../components/CalendlyProvider";
-
-import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
@@ -26,50 +24,9 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "HireUp Tech Careers" },
-      { name: "description", content: "HireUp Tech Careers connects top tech talent with leading US organizations." },
-      { name: "author", content: "HireUp Tech" },
-      { property: "og:title", content: "HireUp Tech Careers" },
-      { property: "og:description", content: "HireUp Tech Careers connects top tech talent with leading US organizations." },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "/favicon.svg" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "/favicon.svg" },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      {
-        rel: "icon",
-        type: "image/svg+xml",
-        href: "/favicon.svg",
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   return (
