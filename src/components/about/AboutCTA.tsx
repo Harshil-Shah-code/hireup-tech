@@ -26,7 +26,7 @@ export function AboutCTA() {
                       Email us on
                     </div>
                     <div className="text-body-sm font-bold text-[#0A1D37]">
-                      hello@hireuptech.com
+                      Info@hireuptechcareers.com
                     </div>
                   </div>
                 </div>

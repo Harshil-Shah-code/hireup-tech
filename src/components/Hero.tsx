@@ -53,7 +53,7 @@ const stories: Story[] = [
 export function Hero() {
   const [index, setIndex] = useState(0);
   const { openCalendly } = useCalendly();
-  
+
   // Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedStory, setSelectedStory] = useState<Story | null>(null);
@@ -99,7 +99,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         {/* Floating right badge: testimonial */}
-        <div className="absolute right-2 lg:right-[-20px] top-4 lg:top-10 z-30 float-slower max-w-[280px] sm:max-w-[300px]">
+        <div className="absolute hidden lg:block right-2 lg:right-[-20px] top-4 lg:top-10 z-30 float-slower max-w-[280px] sm:max-w-[300px]">
           <div className="glass-card rounded-2xl p-3.5 shadow-card text-white">
             <div className="flex items-start gap-3">
               <img
@@ -111,7 +111,7 @@ export function Hero() {
                 <p className="text-[11px] leading-snug text-white drop-shadow line-clamp-3">
                   {stories[1].bio}
                 </p>
-                <button 
+                <button
                   onClick={() => openStory("aakash")}
                   className="mt-2 text-[10px] font-semibold px-3 py-1 rounded-full border border-white/60 text-white hover:bg-white hover:text-navy transition cursor-pointer"
                 >
@@ -184,7 +184,7 @@ export function Hero() {
         </div>
 
         {/* Floating bottom-left Badge */}
-        <div className="absolute left-2 lg:left-[-20px] bottom-4 lg:bottom-10 z-30 float-slower max-w-[280px] sm:max-w-[300px]">
+        <div className="absolute hidden lg:block left-2 lg:left-[-20px] bottom-4 lg:bottom-10 z-30 float-slower max-w-[280px] sm:max-w-[300px]">
           <div className="glass-card rounded-2xl p-3.5 shadow-card text-white">
             <div className="flex items-start gap-3">
               <img
@@ -196,7 +196,7 @@ export function Hero() {
                 <p className="text-[11px] leading-snug text-white drop-shadow line-clamp-3">
                   {stories[0].bio}
                 </p>
-                <button 
+                <button
                   onClick={() => openStory("salman")}
                   className="mt-2 text-[10px] font-semibold px-3 py-1 rounded-full border border-white/60 text-white hover:bg-white hover:text-navy transition cursor-pointer"
                 >
@@ -208,10 +208,10 @@ export function Hero() {
         </div>
       </div>
 
-      <StoryModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        story={selectedStory} 
+      <StoryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        story={selectedStory}
       />
     </section>
   );
