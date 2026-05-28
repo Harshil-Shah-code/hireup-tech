@@ -26,7 +26,7 @@ export function AboutCTA() {
                       Email us on
                     </div>
                     <div className="text-body-sm font-bold text-[#0A1D37]">
-                      hello@hireuptech.com
+                      Info@hireuptechcareers.com
                     </div>
                   </div>
                 </div>
@@ -40,8 +40,7 @@ export function AboutCTA() {
                       Visit Us
                     </div>
                     <div className="text-body-sm font-bold text-[#0A1D37]">
-                      N Orange St. 4th Floor , <br />
-                      Wilmington, DE, New Castle, US, 19801
+                      30 N Gould St, Str R, Sheridan, WY 82801, USA
                     </div>
                   </div>
                 </div>
