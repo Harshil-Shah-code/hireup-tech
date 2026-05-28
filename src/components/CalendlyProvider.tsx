@@ -8,7 +8,7 @@ interface CalendlyContextType {
 const CalendlyContext = createContext<CalendlyContextType | undefined>(undefined);
 
 export const CalendlyProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const calendlyUrl = "https://calendly.com/ziempire1004/30min";
+  const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
 
   const openCalendly = (url?: string) => {
     window.open(url || calendlyUrl, "_blank", "noopener,noreferrer");

@@ -51,9 +51,9 @@ export function Contact() {
             </p>
 
             <div className="mt-8 space-y-4">
-              <ContactRow icon={MapPin} label="30 N Gould St, Str R, Sheridan, WY 82801, USA" />
-              <ContactRow icon={Mail} label="Info@hireuptechcareers.com" />
-              <ContactRow icon={Phone} label="+1(307) 292 9723" />
+              <ContactRow icon={MapPin} label={import.meta.env.VITE_ADDRESS} />
+              <ContactRow icon={Mail} label={import.meta.env.VITE_INFO_EMAIL_ADDRESS} />
+              <ContactRow icon={Phone} label={import.meta.env.VITE_MOBILE_NUMBER} />
             </div>
           </div>
 

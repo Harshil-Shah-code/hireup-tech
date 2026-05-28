@@ -26,7 +26,7 @@ export function AboutCTA() {
                       Email us on
                     </div>
                     <div className="text-body-sm font-bold text-[#0A1D37]">
-                      Info@hireuptechcareers.com
+                      {import.meta.env.VITE_ABOUT_US_SECTION_EMAIL}
                     </div>
                   </div>
                 </div>
@@ -40,7 +40,7 @@ export function AboutCTA() {
                       Visit Us
                     </div>
                     <div className="text-body-sm font-bold text-[#0A1D37]">
-                      30 N Gould St, Str R, Sheridan, WY 82801, USA
+                      {import.meta.env.VITE_ADDRESS}
                     </div>
                   </div>
                 </div>
