@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/select";
 import { Clock, Calendar, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
+import { Link } from "@tanstack/react-router";
 
 interface ItTrainingModalProps {
   isOpen: boolean;
@@ -163,12 +164,12 @@ export function ItTrainingModal({ isOpen, onOpenChange }: ItTrainingModalProps) 
           </div>
 
           {/* Fixed Footer */}
-          <div className="p-8 pt-4 border-t bg-white rounded-b-3xl flex items-center justify-between">
-            <p className="text-[10px] text-navy/50 max-w-[200px] leading-tight font-medium">
+          <div className="p-8 pt-4 border-t bg-white rounded-b-3xl flex items-center justify-end">
+            {/* <p className="text-[10px] text-navy/50 max-w-[200px] leading-tight font-medium">
               By submitting this form, you agree to our{" "}
-              <a href="#" className="underline">terms of service</a> and{" "}
-              <a href="#" className="underline">Privacy Policy</a>
-            </p>
+              <Link to="/terms-conditions" className="underline">terms of service</Link> and{" "}
+              <Link to="/privacy-policy" className="underline">Privacy Policy</Link>
+            </p> */}
             <Button
               type="submit"
               disabled={isSubmitting}

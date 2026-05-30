@@ -152,10 +152,10 @@ export function SiteFooter() {
           <p className="text-xs text-white/40">
             © {new Date().getFullYear()} HireUp. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-white/40 hover:text-white transition">Privacy Policy</a>
-            <a href="#" className="text-xs text-white/40 hover:text-white transition">Terms of Service</a>
-          </div>
+          {/* <div className="flex items-center gap-6">
+            <Link to="/privacy-policy" className="text-xs text-white/40 hover:text-white transition">Privacy Policy</Link>
+            <Link to="/terms-conditions" className="text-xs text-white/40 hover:text-white transition">Terms of Service</Link>
+          </div> */}
         </div>
       </div>
     </footer>
