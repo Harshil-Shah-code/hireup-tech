@@ -26,7 +26,7 @@ export function AboutCTA() {
                       Email us on
                     </div>
                     <div className="text-body-sm font-bold text-[#0A1D37]">
-                      {import.meta.env.VITE_ABOUT_US_SECTION_EMAIL}
+                      {import.meta.env.VITE_INFO_EMAIL_ADDRESS}
                     </div>
                   </div>
                 </div>
