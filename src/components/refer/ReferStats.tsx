@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Users, DollarSign, TrendingUp, ArrowRight } from "lucide-react";
 
 const stats = [
@@ -54,12 +55,12 @@ export function ReferStats() {
               it too.
             </p>
           </div>
-          <a
-            href="#rewards"
+          <Link
+            to="#rewards"
             className="inline-flex items-center gap-2 rounded-full bg-white text-navy px-7 py-3.5 text-sm font-semibold hover:bg-navy hover:text-white transition whitespace-nowrap"
           >
             Start Referring <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

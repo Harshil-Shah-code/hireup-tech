@@ -1,4 +1,5 @@
 import aboutImg from "@/assets/about-handshake.jpg";
+import { Link } from "@tanstack/react-router";
 import { Briefcase, Clock, Handshake, Sparkles } from "lucide-react";
 
 const pillars = [
@@ -47,12 +48,12 @@ export function AboutSection() {
               and recruitment to staffing and workforce solutions, our mission is simple: connect
               the right people with the right opportunities — without the usual hiring chaos.
             </p>
-            <a
-              href="#services"
+            <Link
+              to="#services"
               className="mt-7 inline-flex items-center gap-2 rounded-full bg-navy text-white px-6 py-3 text-sm font-semibold hover:bg-orange transition"
             >
               More About Us
-            </a>
+            </Link>
           </div>
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-orange opacity-20 blur-2xl rounded-3xl" />

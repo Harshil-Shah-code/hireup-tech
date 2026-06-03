@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import type { ServiceConfig } from "./types";
 import { ArrowUpRight } from "lucide-react";
 
@@ -19,14 +20,14 @@ export function ServiceSolution({ cfg, onCtaClick }: { cfg: ServiceConfig; onCta
               {cfg.solution?.description}
             </p>
             {cfg.solution?.cta && (
-              <a
-                href={cfg.solution.cta.href}
+              <Link
+                to={cfg.solution.cta.href}
                 onClick={handleCtaClick}
                 className="mt-7 inline-flex items-center gap-2 rounded-full bg-orange text-white px-6 py-3 text-sm font-semibold hover:bg-navy transition-colors"
               >
                 {cfg.solution.cta.label}
                 <ArrowUpRight className="w-4 h-4" />
-              </a>
+              </Link>
             )}
           </div>
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5">

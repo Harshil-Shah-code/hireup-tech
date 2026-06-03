@@ -1,4 +1,5 @@
 import heroIllustration from "@/assets/about-hero-illustration.png";
+import { Link } from "@tanstack/react-router";
 
 export function AboutHero() {
   return (
@@ -25,19 +26,19 @@ export function AboutHero() {
               across the globe.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="/#career"
+              <Link
+                to="/#career"
                 className="inline-flex items-center gap-2 rounded-full bg-white text-navy px-7 py-3.5 text-sm font-semibold hover:bg-orange hover:text-white transition"
               >
                 Join Our Team
                 <span aria-hidden>→</span>
-              </a>
-              <a
-                href="/#services"
+              </Link>
+              <Link
+                to="/#services"
                 className="inline-flex items-center gap-2 rounded-full bg-transparent text-white px-7 py-3.5 text-sm font-semibold border border-white/30 hover:bg-white/10 transition"
               >
                 Explore Services
-              </a>
+              </Link>
             </div>
           </div>
 

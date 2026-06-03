@@ -1,4 +1,5 @@
 import heroImage from "@/assets/refer-earn-hero.png";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
 export function ReferHero() {
@@ -24,18 +25,18 @@ export function ReferHero() {
               connections that matter.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#rewards"
+              <Link
+                to="#rewards"
                 className="inline-flex items-center gap-2 rounded-full bg-orange text-white px-7 py-3.5 text-sm font-semibold hover:bg-white hover:text-navy transition"
               >
                 Start Referring <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#how-it-works"
+              </Link>
+              <Link
+                to="#how-it-works"
                 className="inline-flex items-center gap-2 rounded-full bg-transparent text-white px-7 py-3.5 text-sm font-semibold border border-white/30 hover:bg-white/10 transition"
               >
                 Learn more
-              </a>
+              </Link>
             </div>
           </div>
 

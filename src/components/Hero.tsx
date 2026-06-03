@@ -7,6 +7,7 @@ import jobSeekers from "@/assets/job-seekers.jpg";
 import employers from "@/assets/employers.jpg";
 import { ArrowRight, Phone, Star } from "lucide-react";
 import { StoryModal, type Story } from "./StoryModal";
+import { Link } from "@tanstack/react-router";
 
 const headlines = [
   {
@@ -167,12 +168,12 @@ export function Hero() {
               <Phone className="w-4 h-4" /> Book Free Call
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </button>
-            <a
-              href="#services"
+            <Link
+              to="#services"
               className="inline-flex items-center gap-2 rounded-full border-2 border-white/80 text-white px-6 py-3.5 text-sm font-semibold hover:bg-white hover:text-navy transition"
             >
               Start Your Journey
-            </a>
+            </Link>
           </div>
 
           {/* Stats */}

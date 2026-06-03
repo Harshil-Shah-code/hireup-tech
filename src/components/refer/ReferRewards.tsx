@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Check, ArrowRight } from "lucide-react";
 
 const plans = [
@@ -51,16 +52,15 @@ export function ReferRewards() {
           {plans.map((p) => (
             <div
               key={p.label}
-              className={`relative rounded-3xl p-8 lg:p-10 border transition-all hover:-translate-y-1 ${
-                p.recommended
+              className={`relative rounded-3xl p-8 lg:p-10 border transition-all hover:-translate-y-1 ${p.recommended
                   ? "bg-navy text-white border-navy shadow-pop"
                   : "bg-white text-navy border-border shadow-card"
-              }`}
+                }`}
             >
               {p.badge && (
-                  <span className="absolute -top-3 left-8 inline-block bg-orange text-white text-overline px-4 py-1.5 rounded-full">
-                    {p.badge}
-                  </span>
+                <span className="absolute -top-3 left-8 inline-block bg-orange text-white text-overline px-4 py-1.5 rounded-full">
+                  {p.badge}
+                </span>
               )}
               <h3 className={`text-h3 ${p.recommended ? "text-white" : "text-navy"}`}>
                 {p.label}
@@ -70,9 +70,8 @@ export function ReferRewards() {
               </p>
 
               <div
-                className={`mt-6 grid grid-cols-3 gap-4 rounded-2xl p-5 ${
-                  p.recommended ? "bg-white/10" : "bg-sky-tint"
-                }`}
+                className={`mt-6 grid grid-cols-3 gap-4 rounded-2xl p-5 ${p.recommended ? "bg-white/10" : "bg-sky-tint"
+                  }`}
               >
                 <div>
                   <div className={`text-h2 ${p.recommended ? "text-orange" : "text-navy"}`}>
@@ -102,9 +101,8 @@ export function ReferRewards() {
                 {p.perks.map((perk) => (
                   <li key={perk} className="flex items-start gap-3 text-body-sm">
                     <span
-                      className={`shrink-0 w-5 h-5 rounded-full grid place-items-center mt-0.5 ${
-                        p.recommended ? "bg-orange text-white" : "bg-orange/10 text-orange"
-                      }`}
+                      className={`shrink-0 w-5 h-5 rounded-full grid place-items-center mt-0.5 ${p.recommended ? "bg-orange text-white" : "bg-orange/10 text-orange"
+                        }`}
                     >
                       <Check className="w-3 h-3" />
                     </span>
@@ -113,16 +111,15 @@ export function ReferRewards() {
                 ))}
               </ul>
 
-              <a
-                href="#contact"
-                className={`mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition ${
-                  p.recommended
+              <Link
+                to="#contact"
+                className={`mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition ${p.recommended
                     ? "bg-orange text-white hover:bg-white hover:text-navy"
                     : "bg-navy text-white hover:bg-orange"
-                }`}
+                  }`}
               >
                 Start Referring <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           ))}
         </div>

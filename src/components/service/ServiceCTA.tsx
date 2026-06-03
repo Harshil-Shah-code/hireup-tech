@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, Phone } from "lucide-react";
 
 export function ServiceCTA({ onCtaClick }: { onCtaClick: () => void }) {
@@ -17,8 +18,8 @@ export function ServiceCTA({ onCtaClick }: { onCtaClick: () => void }) {
           Big careers and great teams usually start with a simple message. Send us one and let&apos;s see what we can build together.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <a
-            href="/#contact"
+          <Link
+            to="/#contact"
             onClick={handleCtaClick}
             className="group inline-flex items-center gap-2 rounded-full bg-orange text-white pl-6 pr-2 py-2 text-sm font-semibold hover:bg-white hover:text-navy transition-colors"
           >
@@ -26,14 +27,14 @@ export function ServiceCTA({ onCtaClick }: { onCtaClick: () => void }) {
             <span className="grid place-items-center w-9 h-9 rounded-full bg-white text-orange group-hover:bg-orange group-hover:text-white transition-colors">
               <ArrowRight className="w-4 h-4" />
             </span>
-          </a>
-          <a
-            href="/#contact"
+          </Link>
+          <Link
+            to="/#contact"
             className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
           >
             <Phone className="w-4 h-4" />
             Book a free call
-          </a>
+          </Link>
         </div>
       </div>
     </section>

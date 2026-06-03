@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import type { ServiceConfig } from "./types";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { useState } from "react";
@@ -25,8 +26,8 @@ export function ServiceHero({ cfg, onCtaClick }: { cfg: ServiceConfig; onCtaClic
             {cfg.description}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={cfg.primaryCta.href}
+            <Link
+              to={cfg.primaryCta.href}
               onClick={handleCtaClick}
               className="group inline-flex items-center gap-2 rounded-full bg-white text-navy pl-6 pr-2 py-2 text-sm font-semibold hover:bg-orange hover:text-white transition-colors"
             >
@@ -34,15 +35,15 @@ export function ServiceHero({ cfg, onCtaClick }: { cfg: ServiceConfig; onCtaClic
               <span className="grid place-items-center w-9 h-9 rounded-full bg-orange text-white group-hover:bg-white group-hover:text-orange transition-colors">
                 <ArrowRight className="w-4 h-4" />
               </span>
-            </a>
+            </Link>
             {/* {cfg.secondaryCta && (
-              <a
-                href={cfg.secondaryCta.href}
+              <Link
+                to={cfg.secondaryCta.href}
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
               >
                 <PlayCircle className="w-4 h-4" />
                 {cfg.secondaryCta.label}
-              </a>
+              </Link>
             )} */}
           </div>
         </div>

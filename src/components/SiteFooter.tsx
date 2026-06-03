@@ -132,15 +132,15 @@ export function SiteFooter() {
                     )
                   }
                 ].map((item, i) => (
-                  <a
+                  <Link
                     key={i}
-                    href={item.href}
+                    to={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-white/5 border border-white/10 grid place-items-center hover:bg-white hover:text-black transition-all duration-300"
                   >
                     {item.svg}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

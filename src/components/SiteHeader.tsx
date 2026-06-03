@@ -72,9 +72,9 @@ export function SiteHeader() {
 
           <nav className="relative hidden lg:flex items-center gap-0.5">
             {nav.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.to}
+                to={item.to}
                 onMouseEnter={() => setServicesOpen(item.hasDropdown ? true : false)}
                 className="px-3.5 py-2 text-[13px] font-semibold uppercase tracking-wider rounded-full flex items-center gap-1 text-white hover:text-orange transition-colors"
               >
@@ -84,7 +84,7 @@ export function SiteHeader() {
                     className={`w-3.5 h-3.5 opacity-80 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
                   />
                 )}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -141,14 +141,14 @@ export function SiteHeader() {
           <div className="pointer-events-auto lg:hidden mt-3 rounded-3xl border border-secondary/50 bg-white/95 backdrop-blur-2xl overflow-hidden">
             <div className="px-4 py-4 flex flex-col gap-1">
               {nav.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.to}
+                  to={item.to}
                   onClick={() => setOpen(false)}
                   className="px-3 py-2.5 text-sm font-semibold text-navy hover:bg-accent rounded-xl"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               <div className="border-t border-border my-2" />
               {services.map((s) => (
@@ -162,13 +162,13 @@ export function SiteHeader() {
                   {s.title}
                 </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                to="/contact-us"
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-orange px-5 py-3 text-sm font-semibold text-white"
               >
                 <Phone className="w-4 h-4" /> Book Free Call
-              </a>
+              </Link>
             </div>
           </div>
         )}
